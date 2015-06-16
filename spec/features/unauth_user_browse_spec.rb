@@ -31,4 +31,5 @@ describe "unauthorized user browsing", type: :feature do
     assert page.has_content?("strawberry")
   end
 
+
 end
