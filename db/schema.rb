@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616213749) do
+ActiveRecord::Schema.define(version: 20150616233545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20150616213749) do
     t.string  "full_name"
     t.string  "password_digest"
     t.integer "role",            default: 0
-    t.string  "display_name"
+    t.string  "display_name",    default: ""
   end
 
   add_foreign_key "category_items", "categories"
