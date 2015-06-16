@@ -12,8 +12,8 @@ describe "user", type: :feature do
   it "can login" do
     click_link("login")
     expect(current_path).to eq(login_path)
-    page.fill_in "Email", with: "andrewfink@gmail.com"
-    page.fill_in "Password", with: "password"
+    page.fill_in "email", with: "andrewfink@gmail.com"
+    page.fill_in "password", with: "password"
     click_button "come on in, farmhand"
 
     expect(current_path).to eq(root_path)
@@ -23,7 +23,7 @@ describe "user", type: :feature do
   it "can't login without an email" do
     click_link("login")
     expect(current_path).to eq(login_path)
-    page.fill_in "Password", with: "password"
+    page.fill_in "password", with: "password"
     click_button "come on in, farmhand"
 
     expect(current_path).to eq(login_path)
@@ -33,7 +33,7 @@ describe "user", type: :feature do
   it "can't login without a password" do
     click_link("login")
     expect(current_path).to eq(login_path)
-    page.fill_in "Email", with: "andrewfink@gmail.com"
+    page.fill_in "email", with: "andrewfink@gmail.com"
     click_button "come on in, farmhand"
 
     expect(current_path).to eq(login_path)
@@ -43,8 +43,8 @@ describe "user", type: :feature do
   it "can logout while logged in" do
     click_link("login")
     expect(current_path).to eq(login_path)
-    page.fill_in "Email", with: "andrewfink@gmail.com"
-    page.fill_in "Password", with: "password"
+    page.fill_in "email", with: "andrewfink@gmail.com"
+    page.fill_in "password", with: "password"
     click_button "come on in, farmhand"
 
     click_link("logout")
