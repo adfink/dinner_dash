@@ -19,4 +19,16 @@ describe "unauthorized user browsing", type: :feature do
     expect(current_path).to eq(categories_path)
     assert page.has_link?(category.name)
   end
+
+  it "can browse menu items" do
+    category = Category.create(name: "fruit")
+    item = category.items.create(title: "strawberry")
+
+    visit categories_path
+    click_link("fruit")
+
+    expect(current_path).to eq(category_path(category))
+    assert page.has_content?("strawberry")
+  end
+
 end
