@@ -5,11 +5,13 @@ describe "user creates account", type: :feature do
     visit root_path
     click_link("new farmhand")
     page.fill_in "email", with: "andrewfink@gmail.com"
+    page.fill_in "confirm email", with: "andrewfink@gmail.com"
     page.fill_in "password", with: "password"
+    page.fill_in "confirm password", with: "password"
     page.fill_in "nickname", with: "Finker"
     page.fill_in "full name", with: "Andrew Fink"
     click_button("join the farm")
-    # user = User.last
+
     expect(current_path).to eq(profile_path)
     expect(page).to have_content("Finker")
   end

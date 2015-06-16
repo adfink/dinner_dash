@@ -18,7 +18,6 @@ class UsersController < ApplicationController
       redirect_to profile_path
     else
       flash[:errors] = @user.errors.full_messages.join(", ")
-      # render :new
       redirect_to new_user_path
     end
   end
@@ -26,7 +25,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :full_name, :display_name, :password)
+    params.require(:user).permit( :email,
+                                  :email_confirmation,
+                                  :full_name,
+                                  :display_name,
+                                  :password,
+                                  :password_confirmation)
   end
 
 end
