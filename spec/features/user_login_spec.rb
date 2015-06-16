@@ -16,8 +16,8 @@ describe "user", type: :feature do
     page.fill_in "password", with: "password"
     click_button "come on in, farmhand"
 
-    expect(current_path).to eq(root_path)
-    assert page.has_content?("Farm to Table")
+    expect(current_path).to eq(profile_path)
+    assert page.has_content?("Andrew Fink")
   end
 
   it "can't login without an email" do

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       # redirect_to admin_user_path(@user) if @user.admin?
       # redirect_to :back
       # binding.pry
-      redirect_to root_path
+      redirect_to profile_path
     else
       flash.now[:errors] = "Invalid login"
       render :new
