@@ -22,7 +22,7 @@ describe "unauthorized user browsing", type: :feature do
 
   it "can browse menu items" do
     category = Category.create(name: "fruit")
-    item = category.items.create(title: "strawberry")
+    item = category.items.create(title: "strawberry", description: "yummy", price: 100)
 
     visit categories_path
     click_link("fruit")

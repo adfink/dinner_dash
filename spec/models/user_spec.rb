@@ -25,4 +25,22 @@ RSpec.describe User, type: :model do
 
     expect(user2).not_to be_valid
   end
+
+  it "is invalid without a properly formatted email address" do
+    user.email = "eatitsucka"
+
+    expect(user).not_to be_valid
+
+    user.email = "email@notasite"
+
+    expect(user).not_to be_valid
+
+    user.email = "@buddies.com"
+
+    expect(user).not_to be_valid
+
+    user.email = "brett@cool.org"
+
+    expect(user).to be_valid
+  end
 end
