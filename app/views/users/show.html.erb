@@ -1,1 +1,4 @@
 <h1><%= @user.display_name != "" ? @user.display_name : @user.full_name %></h1>
+<ol><%= @user.orders.each do |order| %>
+  <li><%= order.items.count %> item(s)</li>
+<% end %></ol>
