@@ -1,0 +1,13 @@
+<h1>your cart</h1>
+
+<ul>
+<% @cart.items.each do |item, quantity| %>
+  <li><%= item.title %><br>
+      <%= form_for :quantity do |f| %> <%= f.text_field :quantity, placeholder: "#{quantity}" %>
+      <%= f.submit "update" %>
+      <% end %>
+  </li>
+<% end %>
+</ul>
+
+<%= link_to "menus", categories_path %>
