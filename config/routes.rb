@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root to: 'users#index'
   resources :users, only: [:index, :new, :create]
   resources :categories, only: [:index, :show]
-  resources :orders, only: [:show]
+  resources :orders, only: [:show, :new]
   resources :items, only: [:show]
+  resources :carts, only: [:create]
   
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
