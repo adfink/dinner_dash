@@ -10,4 +10,11 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'users#show'
 
+  namespace :admin do
+    resources :users, only: [:show]
+    resources :categories, only: [:new, :create, :index, :show, :edit]
+    resources :orders, only: [:index, :show, :edit]
+    resources :items, only: [:index, :show, :edit, :new, :create]
+  end
+
 end
