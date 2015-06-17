@@ -1,0 +1,13 @@
+<h1><%= @item.title %></h1>
+
+<%= image_tag(@item.photo_url, height: '300', alt: @item.title) %>
+
+<h2>price: <%= number_to_currency @item.price, precision: 2 %></h2>
+
+<h3>menus:</h3>
+
+<ul>
+  <% @item.categories.each do |category| %>
+    <li><%= link_to category.name, category %></li>
+  <% end %>
+</ul>
