@@ -1,4 +1,8 @@
 <h1><%= @category.name %></h1>
+<ul>
 <% @category.items.each do |item| %>
-  <%= link_to item.title, item %>
+  <li><%= link_to item.title, item %></li>
 <% end %>
+</ul>
+
+<%= link_to "menus", categories_path %>

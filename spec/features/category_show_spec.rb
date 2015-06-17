@@ -24,5 +24,6 @@ describe "categories index and show", type: :feature do
     expect(page).to have_content("cupcakes")
     expect(page).to have_link("red velvet")
     expect(page).to have_link("chocolate")
+    expect(page).to have_link("menus")
   end
 end
