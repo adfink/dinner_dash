@@ -51,7 +51,7 @@ RSpec.describe Item, type: :model do
 
   it "can be assigned a picture but has a default value" do
     item2 = Item.create(title: "bacon", description: "so good", price: 300,
-                        photo_url:"http://jnafarm.locallygrown.net/files/grower/image/5860/original/Farm_to_Table.jpg")
+                        photo_url: "http://jnafarm.locallygrown.net/files/grower/image/5860/original/Farm_to_Table.jpg")
 
     expect(item.photo_url).to eq("http://cornucopia.org/cereal-scorecard/images/profiles/farm_to_table_logo.jpg")
     expect(item2.photo_url).to eq("http://jnafarm.locallygrown.net/files/grower/image/5860/original/Farm_to_Table.jpg")
