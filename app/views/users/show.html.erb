@@ -1,5 +1,6 @@
 <h1><%= @user.display_name == "" ? @user.full_name : @user.display_name %></h1>
-<ol><%= @user.orders.each do |order| %>
-  <li><%= order.items.count %> item(s)</li>
+
+<ol><% @user.orders.each do |order| %>
+  <li>your order: <%= order.items.count %> item(s)</li>
     <%= link_to "view this order", order_path(order) %>
 <% end %></ol>

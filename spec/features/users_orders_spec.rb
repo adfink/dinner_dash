@@ -14,18 +14,20 @@ describe "user has access to their orders", type: :feature do
     expect(page).to have_content("1 item(s)")
     # expect(page).to have_content("Finker")
   end
+
+  it "user can click on an order and go get more info about that order" do
+    visit profile_path
+    click_link("view this order")
+
+    # expect(current_path).to eq(order_path)
+    expect(page).to have_content("a little bit of information about your order...")
+  end
+
 end
 
-# As an authenticated user I expect to see a display page for my orders...
-#
-# As a user when I am on my profile page I expect to see a link to see all my orders
-# I expect to click on that link and go to a page that displays all my orders
-# I expect to see a link to an individual order and when I click on that link
-#  I expect to got to a page that displays the following information about that order:
-#
 # items with quantity ordered and line-item subtotals
 # links to each item description page
-# the current status of the order
+
 # order total price
 # date/time order was submitted
 # if completed or cancelled, display a timestamp when that action took place
