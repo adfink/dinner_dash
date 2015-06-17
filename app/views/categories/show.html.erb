@@ -1,4 +1,12 @@
-<h1><%= @category.name %></h1>
+<h1 id="menu-title"><%= @category.name %></h1>
+
+<ul>
 <% @category.items.each do |item| %>
-  <%= item.title %>
+  <li>
+    <h3><%= item.title %></h3><br>
+    <%= link_to image_tag(item.photo_url, height: '120', alt: item.title), item %>
+  </li>
 <% end %>
+</ul>
+
+<%= link_to "menus", categories_path %>
