@@ -1,7 +1,11 @@
 
 <h1>with this form you can change the <%= @category.name %> category name</h1>
-<%= form_for(@category, url: :admin_category) do |f| %>
+
+<%= form_for([:admin, @category]) do |f| %>
   <%= f.label :name, "category name" %>
   <%= f.text_field :name, placeholder: @category.name %><br>
-  <%= f.submit "update this category", method: :put%>
+  <%= f.submit "update this menu"%>
 <% end  %>
+
+
+<%= link_to "back to the category list", admin_categories_path %>
