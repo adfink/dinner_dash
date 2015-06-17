@@ -1,7 +1,11 @@
-<h1><%= @category.name %></h1>
+<h1 id="menu-title"><%= @category.name %></h1>
+
 <ul>
 <% @category.items.each do |item| %>
-  <li><%= link_to item.title, item %></li>
+  <li>
+    <h3><%= item.title %></h3><br>
+    <%= link_to image_tag(item.photo_url, height: '120'), item %>
+  </li>
 <% end %>
 </ul>
 
