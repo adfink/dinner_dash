@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616233545) do
+ActiveRecord::Schema.define(version: 20150617020434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 20150616233545) do
     t.string   "title"
     t.string   "description"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                                                                            null: false
+    t.datetime "updated_at",                                                                                            null: false
+    t.string   "photo_url",   default: "http://cornucopia.org/cereal-scorecard/images/profiles/farm_to_table_logo.jpg"
   end
 
   create_table "order_items", force: :cascade do |t|
