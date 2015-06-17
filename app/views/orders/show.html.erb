@@ -1,3 +1,20 @@
 <h1>a little bit of information about your order...</h1>
 <strong>order status:</strong> <%= @order.status %><br>
 <strong>date order was submitted:</strong> <%= @order.created_at %>
+<table>
+  <th>
+
+  </th>
+  <% @order.items.each do |item| %>
+  <tr>
+    <td>
+      <%= link_to "item description", item.description %>
+    </td>
+    <td>
+
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<!-- need to write test for table, need to build link  -->
