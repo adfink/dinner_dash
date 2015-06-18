@@ -1,11 +1,21 @@
 <h1>login</h1>
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :email, "email" %>
-  <%= f.text_field :email %><br>
-  <%= f.label :password, "password" %>
-  <%= f.password_field :password %><br>
-  <%= f.submit "come on in, farmhand" %>
-<% end%>
 
-
-
+<%= form_for(:session, url: login_path, html: {class: 'form-horizontal'}) do |f| %>
+  <div class="field form-group">
+    <%= f.label :email,"email", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :password, "password", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.password_field :password, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "come on in, farmhand" %>
+    </div>
+  </div>
+<% end %>
