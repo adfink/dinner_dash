@@ -5,13 +5,10 @@
 <% @category.items.each do |item| %>
   <li>
     <h3><%= item.title %></h3><br>
-    <%= link_to image_tag(item.image, height: '120', alt: item.title), item %>
-    <%= button_to carts_path(item_id: item.id), class: 'btn btn-hover' do %>
-      <i class="glyphicon glyphicon-plus"></i>
-    <% end %>
-
     <%= link_to image_tag(item.image.url, height: '120', alt: item.title), item %>
-    <%= button_to "add to cart", carts_path(item_id: item.id) %>
+    <%= button_to cart_path(item_id: item.id), class: 'btn btn-hover' do %>
+      <i class="glyphicon glyphicon-plus"></i> add to cart
+    <% end %>
   </li>
 <% end %>
 </ul>
