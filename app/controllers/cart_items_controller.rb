@@ -8,9 +8,19 @@ class CartItemsController < ApplicationController
   end
 
   def update
-    @cart.contents[params[:item_id]] = params[:quantity]
+    if params[:quantity].to_i > 0
+      @cart.contents[params[:item_id]] = params[:quantity]
+    else
+      @cart.contents.delete(params[:item_id])
+    end
     session[:cart] = @cart.contents
     flash[:notice] = "your cart has been updated"
     redirect_to new_order_path
   end 
+
+  private
+
+  def set_cart
+    session[:cart] = @cart.contents
+  end
 end
