@@ -4,7 +4,7 @@
 <% @category.items.each do |item| %>
   <li>
     <h3><%= item.title %></h3><br>
-    <%= link_to image_tag(item.photo_url, height: '120', alt: item.title), item %>
+    <%= link_to image_tag(item.image.url, height: '120', alt: item.title), item %>
     <%= button_to "add to cart", carts_path(item_id: item.id) %>
   </li>
 <% end %>

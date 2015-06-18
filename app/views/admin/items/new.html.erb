@@ -1,0 +1,11 @@
+<%= form_for([:admin, @item]) do |f| %>
+  <%= f.label :title, "title" %>
+  <%= f.text_field :title %><br>
+  <%= f.label :description, "description" %>
+  <%= f.text_field :description %><br>
+  <%= f.label :price, "price" %>
+  <%= f.text_field :price %><br>
+  <%= f.label :image, "upload an image" %>
+  <%= f.file_field :image %><br>
+  <%= f.submit "add item" %>
+<% end  %>
