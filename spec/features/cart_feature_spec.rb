@@ -10,7 +10,9 @@ describe "cart", type: :feature do
   it "can show it's contents" do
     visit category_path(@category)
     click_button "add to cart"
-    click_link("cart")
+
+    expect(current_path).to eq(category_path(@category))
+    page.find("#cart").click
 
     expect(current_path).to eq(new_order_path)
     expect(page).to have_content("sour cream")
