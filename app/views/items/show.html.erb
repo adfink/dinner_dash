@@ -1,6 +1,6 @@
 <h1><%= @item.title %></h1>
 
-<%= image_tag(@item.photo_url, height: '300', alt: @item.title) %>
+<%= image_tag(@item.image.url, height: '300', alt: @item.title) %>
 
 <h2>price: <%= number_to_currency @item.price, precision: 2 %></h2>
 
