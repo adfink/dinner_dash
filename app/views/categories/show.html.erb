@@ -1,5 +1,6 @@
 <h1 id="menu-title"><%= @category.name %></h1>
-
+<%= link_to "menus", categories_path %>
+<!-- put the link to menus in the nav bar -->
 <ul>
 <% @category.items.each do |item| %>
   <li>
@@ -9,5 +10,3 @@
   </li>
 <% end %>
 </ul>
-
-<%= link_to "menus", categories_path %>
