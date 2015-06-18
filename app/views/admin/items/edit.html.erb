@@ -1,0 +1,17 @@
+
+<h1>with this form you can change the <%= @item.title %> item informativemication</h1>
+
+<%= form_for([:admin, @item]) do |f| %>
+  <%= f.label :title, "title" %>
+  <%= f.text_field :title, placeholder: @item.title %><br>
+  <%= f.label :description, "description" %>
+  <%= f.text_field :description, placeholder: @item.description %><br>
+  <%= f.label :price, "price" %>
+  <%= f.text_field :price, placeholder: @item.price %><br>
+  <%= f.label :photo_url, "photo" %>
+  <%= f.text_field :photo_url, placeholder: @item.photo_url %><br>
+  <%= f.submit "update this item"%>
+<% end  %>
+
+
+<%= link_to "back to the item list", admin_items_path %>
