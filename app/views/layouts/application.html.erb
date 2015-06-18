@@ -11,19 +11,10 @@
 <% flash.each do |name, message| %>
   <%= content_tag :div, message, :id => "flash_#{name}" %>
 <% end %>
-
-<div>
-  <% if current_user %>
-    <%= link_to "logout", logout_path, method: :delete %>
-  <% else %>
-    <%= link_to "login", login_path %>
-  <% end %>
-  <%= link_to new_order_path, class: 'btn btn-hover' do %>
-    <i class="glyphicon glyphicon-shopping-cart"></i> cart
-  <% end %>
-</div>
+<%= render partial: 'layouts/nav' %>
 
 <%= yield %>
 
+<%= render partial: 'layouts/footer' %>
 </body>
 </html>
