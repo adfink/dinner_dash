@@ -18,7 +18,9 @@
   <% else %>
     <%= link_to "login", login_path %>
   <% end %>
-  <%= link_to "cart", new_order_path %>
+  <%= link_to new_order_path, class: 'btn btn-hover' do %>
+    <i class="glyphicon glyphicon-shopping-cart"></i> cart
+  <% end %>
 </div>
 
 <%= yield %>
