@@ -1,12 +1,12 @@
 <h1>a little bit of information about your order...</h1>
 <strong>order status:</strong> <%= @order.status %><br>
 <strong>date order was submitted:</strong> <%= @order.created_at %>
-<table>
+<table class="table-responsive">
   <th>
 
   </th>
   <% @order.items.each do |item| %>
-  <tr>
+  <tr class="active">
     <td>
       <%= link_to "item description", item.description %>
     </td>

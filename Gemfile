@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'unicorn'
 
 gem 'skylight'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -47,5 +49,3 @@ end
 group :development do
   gem 'better_errors'
 end
-
-
