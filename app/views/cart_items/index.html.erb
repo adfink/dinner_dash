@@ -1,0 +1,15 @@
+<h1>your cart</h1>
+
+<ul>
+<% @cart.items.each do |item, quantity| %>
+  <li><%= item.title %><br>
+      <%= form_tag '/cart', method: :put do %> 
+        <%= text_field_tag :quantity, quantity %>
+        <%= hidden_field_tag :item_id, item.id %>
+        <%= submit_tag "update" %>
+      <% end %>
+  </li>
+<% end %>
+</ul> 
+
+<%= link_to "menus", categories_path %>
