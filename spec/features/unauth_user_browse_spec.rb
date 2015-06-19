@@ -37,4 +37,19 @@ describe "unauthorized user", type: :feature do
 
     expect(page).to have_content("The page you were looking for doesn't exist")
   end
+
+  it "does not have admin access" do
+    user =  User.create(email: "sample@user.com", 
+                        full_name: "Sample User", 
+                        password: "password", 
+                        role: 1)
+    visit admin_categories_path
+    expect(page).to have_content("The page you were looking for doesn't exist")
+
+    visit admin_items_path
+    expect(page).to have_content("The page you were looking for doesn't exist")
+
+    visit admin_user_path(user)
+    expect(page).to have_content("The page you were looking for doesn't exist")
+  end
 end
