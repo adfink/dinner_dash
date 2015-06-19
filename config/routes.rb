@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:new, :create, :index, :show, :edit, :update]
     resources :orders, only: [:index, :show, :edit]
     resources :items, only: [:index, :show, :edit, :new, :create, :update]
+    resources :category_items, only: [:new, :create]
   end
 
 end
