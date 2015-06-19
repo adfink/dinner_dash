@@ -14,7 +14,12 @@ describe "admin", type: :feature do
     expect(current_path).to eq(admin_category_path(@category))
     click_link "add itme to this menu"
     expect(current_path).to eq(new_admin_category_item_path(@category))
-
+    assert page.has_content?("fresh milk")
+    click_link "add this itme to the menu"
+    expect(current_path).to eq(admin_categories_path)
+    click_link "meat"
+    expect(current_path).to eq(admin_category_path(@category))
+    assert page.has_content?("fresh milk")
   end
 
 end
