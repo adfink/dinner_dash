@@ -2,7 +2,7 @@ class CartItemsController < ApplicationController
   def create
     item = Item.find_by(id: params[:item_id])
     @cart.add_item(item.id)
-    session[:cart] = @cart.contents
+    set_cart
     flash[:notice] = "#{item.title} added to your cart"
     redirect_to :back
   end
@@ -13,7 +13,7 @@ class CartItemsController < ApplicationController
     else
       @cart.contents.delete(params[:item_id])
     end
-    session[:cart] = @cart.contents
+    set_cart
     flash[:notice] = "your cart has been updated"
     redirect_to new_order_path
   end 
