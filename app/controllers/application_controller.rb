@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
     current_user && current_user.admin?
   end
 
+  def not_found
+    render file: "public/404"
+  end
+
   private
 
   def cart_loader

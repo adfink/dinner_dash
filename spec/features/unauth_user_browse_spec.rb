@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "unauthorized user browsing", type: :feature do
+describe "unauthorized user", type: :feature do
   it "can view the landing page" do
     visit root_path
 
@@ -31,5 +31,10 @@ describe "unauthorized user browsing", type: :feature do
     assert page.has_content?("strawberry")
   end
 
+  it "can't see other users data" do
+    user = User.create(email: "sample@user.com", full_name: "Sample User", password: "password") 
+    visit "/users/#{user.id}"
 
+    expect(page).to have_content("The page you were looking for doesn't exist")
+  end
 end
