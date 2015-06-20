@@ -14,7 +14,7 @@ describe "cart", type: :feature do
     expect(current_path).to eq(category_path(@category))
     page.find("#cart").click
 
-    expect(current_path).to eq(new_order_path)
+    expect(current_path).to eq(cart_path)
     expect(page).to have_content("sour cream")
   end
 end
