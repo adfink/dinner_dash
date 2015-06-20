@@ -15,6 +15,11 @@
       <%= link_to new_order_path, id: 'cart', class: 'btn btn-hover navbar-btn' do %>
         <i class="glyphicon glyphicon-shopping-cart"></i>
       <% end %>
+
+      <%= form_tag items_path, class: 'navbar-left', :method => 'get' do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+      <% end %>
     </div>
   </div>
 </nav>
