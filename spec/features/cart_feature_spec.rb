@@ -17,7 +17,4 @@ describe "cart", type: :feature do
     expect(current_path).to eq(new_order_path)
     expect(page).to have_content("sour cream")
   end
-
-
-
 end
