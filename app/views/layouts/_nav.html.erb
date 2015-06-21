@@ -16,7 +16,7 @@
         <i class="glyphicon glyphicon-shopping-cart"></i>
       <% end %>
 
-      <%= form_tag items_path, class: 'navbar-left', :method => 'get' do %>
+      <%= form_tag search_path, :method => 'get' do %>
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "Search", :name => nil %>
       <% end %>

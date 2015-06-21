@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'users#show'
 
+  get '/search', to: 'search#items'
+
   namespace :admin do
     resources :users, only: [:show]
     resources :categories, only: [:new, :create, :index, :show, :edit, :update]
