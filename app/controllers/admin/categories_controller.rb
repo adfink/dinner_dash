@@ -8,9 +8,12 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new
   end
 
+  def show
+    @category = Category.find(params[:id])
+  end
+
   def edit
     @category = Category.find(params[:id])
-
   end
 
   def create
@@ -34,7 +37,5 @@ class Admin::CategoriesController < Admin::BaseController
   def category_params
     params.require(:category).permit(:name)
   end
-
-
 
 end
