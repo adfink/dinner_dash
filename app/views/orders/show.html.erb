@@ -1,20 +1,27 @@
 <h1>a little bit of information about your order...</h1>
-<strong>order status:</strong> <%= @order.status %><br>
+<strong>order status:</strong> <%= @order.display_status %><br>
 <strong>date order was submitted:</strong> <%= @order.created_at %>
 <table class="table-responsive">
   <th>
 
   </th>
-  <% @order.items.each do |item| %>
+  <% @order.order_items.each do |order_item| %>
   <tr class="active">
     <td>
-      <%= link_to "#{item.title}", item_path(item) %>
+      <%= link_to "#{order_item.item.title}", item_path(order_item.item) %> |
     </td>
+      <td>amount sold: <%= order_item.quantity %> </td>
+      <td>total price: <%= number_to_currency order_item.total_price %></td>
+      <% end %>
+  </tr>
+  <tr class="active">
     <td>
-
+      total: <%= number_to_currency @order.total_price %>
     </td>
   </tr>
-  <% end %>
+
+
+
 </table>
 
 <!-- need to write test for table, need to build link  -->

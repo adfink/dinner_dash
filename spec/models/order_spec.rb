@@ -12,4 +12,6 @@ RSpec.describe Order, type: :model do
 
     expect(order.total_price).to eq(24.00)
   end
+
+  
 end
