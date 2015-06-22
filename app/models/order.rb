@@ -15,4 +15,8 @@ class Order < ActiveRecord::Base
     end
     display
   end
+
+  def orders_by_status
+    #need a method to group orders by status
+  end
 end

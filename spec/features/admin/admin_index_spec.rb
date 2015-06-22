@@ -17,6 +17,12 @@ describe "admin index page", type: :feature do
     expect(page).to have_content("Orders")
   end
 
+  it "total number of orders by status" do
+    visit admin_orders_path
+
+    expect(page).to have_content(total)
+  end
+
 end
 
 # As an authorized admin
