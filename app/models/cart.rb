@@ -14,9 +14,17 @@ class Cart
     contents.values.sum
   end
 
+  def total_price
+    items.map { |item, quantity| item.price * quantity }.reduce(:+)
+  end
+
   def items
     contents.map do |item_id, quantity|
       [Item.find_by(id: item_id), quantity]
     end
+  end
+
+  def clear
+    @contents = {}
   end
 end
