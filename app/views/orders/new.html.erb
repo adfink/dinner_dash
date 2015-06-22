@@ -3,13 +3,13 @@
 <ul>
 <% @cart.items.each do |item, quantity| %>
   <li>
-    <%= item.title %> | quantity <%= quantity %> | price <%= number_to_currency item.price %><br>
+    <%= item.title %> | quantity <%= quantity %> | total <%= number_to_currency (quantity * item.price) %><br>
     <%=  %>
   </li>
 <% end %>
 </ul> 
 
-<h3>Total <%= @cart.total %></h3>
+<h3>Total <%= number_to_currency @cart.total %></h3>
 
 <%= button_to "confirm checkout", orders_path %>
 
