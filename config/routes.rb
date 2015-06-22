@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: 'users#index'
+  
+
   resources :users, only: [:index, :new, :create]
   resources :categories, only: [:index, :show]
   resources :orders, only: [:show, :new]
@@ -24,4 +26,5 @@ Rails.application.routes.draw do
     resources :category_items, only: [:new, :create]
   end
 
+  get '*unmatched_route', to: 'application#not_found'
 end
