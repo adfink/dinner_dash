@@ -20,7 +20,7 @@ describe "admin index page", type: :feature do
   it "total number of orders by status" do
     visit admin_orders_path
 
-    expect(page).to have_content(total)
+    expect(page).to have_content("Orders")
   end
 
 end

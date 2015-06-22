@@ -3,6 +3,10 @@ class Order < ActiveRecord::Base
   has_many :order_items
   has_many :items, through: :order_items
   enum status: { ordered: 0, paid: 1, cancelled: 2, completed: 3 }
+  scope :ordered, -> { where(status: 0) }
+  scope :paid, -> { where(status: 1) }
+  scope :cancelled, -> { where(status: 2) }
+  scope :completed, -> { where(status: 3) }
 
   def total_price
     self.order_items.map(&:total_price).sum
@@ -14,9 +18,5 @@ class Order < ActiveRecord::Base
       display += " at #{self.updated_at}"
     end
     display
-  end
-
-  def orders_by_status
-    #need a method to group orders by status
   end
 end
