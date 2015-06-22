@@ -12,6 +12,10 @@ class Admin::ItemsController < Admin::BaseController
     @item = Item.find(params[:id])
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
+
   def update
     item = Item.find(params[:id])
     item.update(item_params)

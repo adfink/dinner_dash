@@ -21,7 +21,7 @@ class Admin::CategoriesController < Admin::BaseController
     if category.save
       redirect_to admin_categories_path
     else
-      flash.now[:errors] = "oops that didn't persist to the database...as they say in the industry"
+      flash[:errors] = "oops that didn't persist to the database...as they say in the industry"
       redirect_to new_admin_category_path
     end
   end
