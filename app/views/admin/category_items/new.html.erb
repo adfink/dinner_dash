@@ -1,0 +1,16 @@
+<h1>items...all of them</h1>
+
+
+<h1><%= @category.name %></h1>
+<h1>admin</h1>
+
+
+<h2>items</h2>
+<ul>
+  <% @items.each do |item| %>
+    <li><%= item.title%>    |||| <%= link_to "add this item to the menu", admin_category_items_path(item_id: item.id, category_id: @category.id ), method: :post %></li>
+  <% end %>
+</ul>
+<p><%= link_to "add an item", new_admin_item_path %></p>
+
+<%= link_to 'Back to category page', :back %>

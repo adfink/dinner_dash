@@ -8,9 +8,12 @@ class Admin::CategoriesController < Admin::BaseController
     @category = Category.new
   end
 
+  def show
+    @category = Category.find(params[:id])
+  end
+
   def edit
     @category = Category.find(params[:id])
-
   end
 
   def create
@@ -18,7 +21,7 @@ class Admin::CategoriesController < Admin::BaseController
     if category.save
       redirect_to admin_categories_path
     else
-      flash.now[:errors] = "oops that didn't persist to the database...as they say in the industry"
+      flash[:errors] = "oops that didn't persist to the database...as they say in the industry"
       redirect_to new_admin_category_path
     end
   end
@@ -34,7 +37,5 @@ class Admin::CategoriesController < Admin::BaseController
   def category_params
     params.require(:category).permit(:name)
   end
-
-
 
 end

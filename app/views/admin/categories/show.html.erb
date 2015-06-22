@@ -1,0 +1,8 @@
+<h1><%= @category.name %></h1>
+<ul>
+  <% @category.items.each do |item| %>
+    <li><%= item.title%></li>
+  <% end %>
+
+  <%= link_to "add item to this menu", new_admin_category_item_path(category_id: @category.id) %>
+</ul>

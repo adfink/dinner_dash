@@ -2,14 +2,15 @@
 
 <ul>
 <% @cart.items.each do |item, quantity| %>
-  <li><%= item.title %><br>
-      <%= form_tag '/cart', method: :put do %> 
-        <%= text_field_tag :quantity, quantity %>
-        <%= hidden_field_tag :item_id, item.id %>
-        <%= submit_tag "update" %>
-      <% end %>
+  <li>
+    <%= item.title %> | quantity <%= quantity %> | total <%= number_to_currency (quantity * item.price) %><br>
+    <%=  %>
   </li>
 <% end %>
 </ul> 
 
-<%= link_to "menus", categories_path %>
+<h3>Total <%= number_to_currency @cart.total_price %></h3>
+
+<%= button_to "confirm checkout", orders_path %>
+
+<%= link_to "back to cart", cart_path %>
