@@ -8,7 +8,7 @@ describe "admin", type: :feature do
     @item = Item.create(title: "fresh milk", description: "straight from the udder.", price: 5.00)
   end
 
-  it "can add items to menu" do
+  xit "can add items to menu" do
     visit admin_items_path
     click_link "fresh milk"
     expect(current_path).to eq(admin_item_path(@item))
