@@ -12,4 +12,12 @@ RSpec.describe Order, type: :model do
 
     expect(order.total_price).to eq(24.00)
   end
+
+  it "display status returns date when appropriate" do
+    order = Order.create(status: 3)
+    order_two = Order.create
+
+    expect(order.display_status).to eq("completed at #{order.updated_at}")
+    expect(order_two.display_status).to eq("ordered")
+  end
 end

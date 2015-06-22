@@ -7,4 +7,12 @@ class Order < ActiveRecord::Base
   def total_price
     self.order_items.map(&:total_price).sum
   end
+
+  def display_status
+    display = self.status
+    if ["completed", "cancelled"].include? self.status
+      display += " at #{self.updated_at}"
+    end
+    display
+  end
 end
