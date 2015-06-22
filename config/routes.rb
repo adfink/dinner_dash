@@ -4,13 +4,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create]
   resources :categories, only: [:index, :show]
-<<<<<<< HEAD
-  resources :orders, only: [:show, :new]
-  resources :items, only: [:show, :index]
-=======
   resources :orders, only: [:show, :new, :create]
   resources :items, only: [:show]
->>>>>>> master
   # resources :carts, only: [:create, :update]
   
   post '/cart', to: 'cart_items#create'
