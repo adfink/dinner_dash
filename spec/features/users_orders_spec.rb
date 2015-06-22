@@ -5,6 +5,7 @@ describe "user has access to their orders", type: :feature do
     @user  = User.create(full_name: "Chelsea May", email: "cdub@gmail.com", password: "password")
     @order = @user.orders.create
     @order.items.create(title: "strawberries", description: "plump, red and sweet", price: 4.00)
+    @order.order_items.first.update_attribute(:quantity, 1)
     ApplicationController.any_instance.stub(:current_user).and_return(@user)
   end
 
