@@ -17,5 +17,48 @@
 @import "bootstrap";
 
 body {
-  background-color: white;
+  background-color: #e5e8e0;
 }
+
+.container-fluid { max-width: 80%;
+
+}
+
+img {width: 100%;
+
+}
+
+.featured {
+  background-color: #c3a17d;
+  h3{color: white;
+    text-transform: uppercase;
+  }
+  h6 {color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+}
+
+h1, h2, h3 {font-family: 'Oswald', sans-serif;
+
+}
+
+h6 {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+}
+
+.featured-two {
+  background-color: white;
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  color: #ccc;
+  h3 {color: black;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+  h6 {color: #999;
+    border-bottom: 1px solid #999;
+  }
+
+  }
