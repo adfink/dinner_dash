@@ -9,13 +9,13 @@ class CartItemsController < ApplicationController
 
   def update
     if params[:quantity].to_i > 0
-      @cart.contents[params[:item_id]] = params[:quantity]
+      @cart.contents[params[:item_id]] = params[:quantity].to_i
     else
       @cart.contents.delete(params[:item_id])
     end
     set_cart
     flash[:notice] = "your cart has been updated"
-    redirect_to new_order_path
+    redirect_to cart_path
   end 
 
   private
