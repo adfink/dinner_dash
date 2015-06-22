@@ -17,4 +17,18 @@ describe "cart", type: :feature do
     expect(current_path).to eq(cart_path)
     expect(page).to have_content("sour cream")
   end
+
+  it "let's a logged-in user check out" do
+    @user = User.new(full_name: 'B G', email: 'test@mail.com', password: 'password')
+    ApplicationController.any_instance.stub(:current_user).and_return(@user) 
+
+    visit category_path(@category)
+    click_button "add to cart"
+    visit cart_path
+
+    expect(page).to have_link('checkout')
+
+    click_link('checkout')
+    expect(current_path).to eq(new_order_path)
+  end
 end

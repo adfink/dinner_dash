@@ -19,4 +19,8 @@ class Cart
       [Item.find_by(id: item_id), quantity]
     end
   end
+
+  def clear
+    @contents = {}
+  end
 end
