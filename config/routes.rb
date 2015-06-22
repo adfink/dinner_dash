@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :show, :edit]
     resources :items, only: [:index, :show, :edit, :new, :create, :update]
     resources :category_items, only: [:new, :create]
+    get '/category_items/new_category_to_item/:item_id', to: 'category_items#new_category_to_item', :as => 'new_category_to_item'
   end
 
   get '*unmatched_route', to: 'application#not_found'
