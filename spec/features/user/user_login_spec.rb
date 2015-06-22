@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-
-
 describe "user", type: :feature do
 
   before :each do
