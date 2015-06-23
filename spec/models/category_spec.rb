@@ -19,4 +19,8 @@ RSpec.describe Category, type: :model do
 
     expect(category2).not_to be_valid
   end
+
+  it "returns a collection of its items" do
+    expect(category).to respond_to(:items)
+  end
 end
