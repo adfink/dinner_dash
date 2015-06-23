@@ -48,4 +48,25 @@ RSpec.describe Item, type: :model do
 
     expect(item).not_to be_valid
   end
+
+  it "responds with a collection of its categories" do
+    expect(item).to respond_to(:categories)
+  end
+
+  it "responds with a collection of its orders" do
+    expect(item).to respond_to(:orders)
+  end
+
+  it "responds with a collection of its order_items" do
+    expect(item).to respond_to(:order_items)
+  end
+
+  it "can search the items by multiple terms" do
+    Item.create(title: 'jerky', description: 'dry meat', price: 4.00)
+    Item.create(title: 'berries', description: 'sweet fruit', price: 4.00)
+    Item.create(title: 'corn', description: 'yellow and sweet', price: 4.00)
+
+    expect(Item.search('jerk').map(&:title)).to eq(['jerky'])
+    expect(Item.search('sweet').map(&:title)).to eq(['berries', 'corn'])
+  end
 end
