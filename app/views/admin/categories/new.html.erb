@@ -1,5 +1,16 @@
+<form class="form-horizontal">
 <%= form_for([:admin, @category]) do |f| %>
-  <%= f.label :name, "menu name" %>
-  <%= f.text_field :name %><br>
-  <%= f.submit "add menu" %>
-<% end  %>
+  <div class="field form-group">
+    <%= f.label :name, "menu", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "add menu" %>
+    </div>
+  </div>
+<% end %>
+</form>
