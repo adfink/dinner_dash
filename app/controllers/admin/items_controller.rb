@@ -18,7 +18,7 @@ before_action(:set_item, only: [:edit, :show, :update])
 
   def update
     @item.update(item_params)
-    set_categories(params[:category][:ids])
+    @item.set_categories(params[:category][:ids])
     flash[:notice] = "Neato!!!...#{@item.title} was just updated in our postgres database"
     redirect_to admin_items_path
   end
@@ -41,12 +41,5 @@ before_action(:set_item, only: [:edit, :show, :update])
 
   def set_item
     @item = Item.find_by(id: params[:id])
-  end
-
-  def set_categories(category_ids)
-    @item.category_items.destroy_all
-    category_ids.each do |id|
-      @item.category_items.find_or_create_by(category_id: id)
-    end
   end
 end

@@ -11,12 +11,20 @@ class Item < ActiveRecord::Base
 
   def part_of?(category)
     categories.include?(category)
+  end
 
   def self.search(search)
     if search
       where('title LIKE ?', "%#{search}%") + where('description LIKE ?', "%#{search}%")
     else
       self.all
+    end
+  end
+
+  def set_categories(category_ids)
+    category_items.destroy_all
+    category_ids.each do |id|
+      category_items.find_or_create_by(category_id: id)
     end
   end
 end
