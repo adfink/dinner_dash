@@ -1,0 +1,23 @@
+<h1>results:</h1>
+
+<% @items.each do |item| %>
+
+  <h3><%= link_to item.title, item %></h3>
+
+  <%= link_to (image_tag item.image.url), item %><br>
+
+  <h4>description:</h4>
+  <strong><%= item.description %></strong><br>
+
+  <%= button_to cart_path(item_id: item.id), class: 'btn btn-hover' do %>
+    <i class="glyphicon glyphicon-plus"></i> add to cart
+  <% end %>
+
+  <h4>menus:</h4>
+  <ul>
+    <% item.categories.each do |category| %>
+      <li><%= link_to category.name, category %></li>
+    <% end %>
+  </ul>
+
+<% end %>
