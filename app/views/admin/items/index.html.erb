@@ -7,7 +7,7 @@
 <h2>items</h2>
 <ul>
   <% @items.each do |item| %>
-    <li>  <%= link_to item.title, admin_item_path(item) %>      |||| <%= link_to "edit", edit_admin_item_path(item) %></li>
+    <li>  <%= link_to item.title, admin_item_path(item) %>      |||| <%= link_to "edit", edit_admin_item_path(item) %>   |||| <%= link_to item.status_display, edit_admin_item_path(item) %></li>
   <% end %>
 </ul>
 <p><%= link_to "add an item", new_admin_item_path %></p>
