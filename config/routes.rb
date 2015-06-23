@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get '/profile', to: 'users#show'
 
+  get '/search', to: 'search#items'
+
   namespace :admin do
     put 'items/:id', to: 'items#update_status', :as => 'item_status'
     resources :users, only: [:show]
