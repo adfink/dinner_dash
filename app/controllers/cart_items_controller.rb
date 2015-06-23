@@ -1,9 +1,11 @@
 class CartItemsController < ApplicationController
+
+  before_action(:set_cart_items, only: [:create])
+
   def create
-    item = Item.find_by(id: params[:item_id])
-    @cart.add_item(item.id)
+    @cart.add_item(@item.id)
     set_cart
-    flash[:notice] = "#{item.title} added to your cart"
+    flash[:notice] = "#{@item.title} added to your cart"
     redirect_to :back
   end
 
@@ -16,11 +18,15 @@ class CartItemsController < ApplicationController
     set_cart
     flash[:notice] = "your cart has been updated"
     redirect_to cart_path
-  end 
+  end
 
   private
 
   def set_cart
     session[:cart] = @cart.contents
+  end
+
+  def set_cart_items
+    @item = Item.find_by(id: params[:item_id])
   end
 end

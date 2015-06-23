@@ -23,21 +23,14 @@ describe "admin index page", type: :feature do
     assert 1, Order.all.paid.count
   end
 
+  it "can go to each individual order" do
+    click_link("view this order")
+    expect(current_path). to eq(admin_order_path(@order))
+  end
 
-
+  it "can change the status" do
+    expect(page).to have_content("paid")
+    # expect(page).to have_select('paid', selected: 'cancelled')
+    #make this work
+  end
 end
-
-# As an authorized admin
-# when i visit '/orders'
-# I See a listing of all orders with:
-# the total number of orders by status
-# links for each individual order
-# filter orders to display by status type
-# (for statuses "ordered", "paid", "cancelled", "completed")
-#
-# link to transition to a different status:
-# link to "cancel" individual orders which are
-# currently "ordered" or "paid"
-# link to "mark as paid" orders which are "ordered"
-# link to "mark as completed" individual orders which are
-# currently "paid"
