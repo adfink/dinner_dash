@@ -2,7 +2,7 @@
 <%= link_to "menus", categories_path %>
 <!-- put the link to menus in the nav bar -->
 <ul>
-<% @category.items.each do |item| %>
+<% @category.items.active.each do |item| %>
   <li>
     <h3><%= item.title %></h3><br>
     <%= link_to image_tag(item.image.url, height: '120', alt: item.title), item %>

@@ -12,6 +12,8 @@ class Item < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => [ "image/jpg", "image/jpeg", "image/png" ]
 
+  scope :active, -> { where(status: "active") }
+
   def part_of?(category)
     categories.include?(category)
   end
