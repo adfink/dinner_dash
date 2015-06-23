@@ -23,6 +23,13 @@ class Admin::ItemsController < Admin::BaseController
     redirect_to admin_items_path
   end
 
+  def update_status
+    item = Item.find_by(id: params[:id])
+    item.update_attributes(status: params[:status])
+    # byebug
+    redirect_to :back
+  end
+
   def create
       item = Item.new(item_params)
       if item.save
