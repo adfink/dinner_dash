@@ -7,21 +7,23 @@ describe "admin index page", type: :feature do
                             email:"chelsmay@gmail.com",
                          password:"password",
                              role: 1)
+    @order = Order.create(status: "paid")
   ApplicationController.any_instance.stub(:current_user).and_return(@user)
+  visit admin_orders_path
   end
 
   it "admin can visit /orders page" do
-    visit admin_orders_path
-
     expect(current_path).to eq(admin_orders_path)
     expect(page).to have_content("Orders")
   end
 
   it "total number of orders by status" do
-    visit admin_orders_path
-
-    expect(page).to have_content("Orders")
+    expect(page).to have_content("paid")
+    assert "paid", @order.status
+    assert 1, Order.all.paid.count
   end
+
+
 
 end
 
