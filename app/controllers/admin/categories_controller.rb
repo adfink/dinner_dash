@@ -1,4 +1,6 @@
 class Admin::CategoriesController < Admin::BaseController
+  
+before_action(:set_category, only: [:show, :edit, :update])
 
   def index
     @categories = Category.all
@@ -9,11 +11,9 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
-    @category = Category.find(params[:id])
   end
 
   def edit
-    @category = Category.find(params[:id])
   end
 
   def create
@@ -27,8 +27,7 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def update
-    category = Category.find(params[:id])
-    category.update(category_params)
+    @category.update(category_params)
     redirect_to admin_categories_path
   end
 
@@ -38,4 +37,7 @@ class Admin::CategoriesController < Admin::BaseController
     params.require(:category).permit(:name)
   end
 
+  def set_category
+    @category = Category.find(params[:id])
+  end
 end

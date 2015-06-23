@@ -1,7 +1,6 @@
 class Admin::OrdersController < Admin::BaseController
   def index
     @orders = Order.all
-    # @orders = Order.group(:status).order("status desc").count(:status)
   end
 
   def show
