@@ -19,19 +19,14 @@ describe "admin", type: :feature do
     expect(current_path).to eq(admin_items_path)
   end
 
-  xit "can change the status of an item from active to retired" do
+  it "can change the status of an item from active to retired" do
     visit admin_items_path
     assert page.has_content?("active")
-    assert page.has_link?("retire this item")
-    click_link "retire this item"
-
+    assert page.has_content?("retire")
+    choose "retire"
     expect(current_path).to eq(admin_items_path)
-    assert page.has_content?("retired")
-    assert page.has_link?("activate this item")
-    click_link "activate this item"
+    click_button "update this item's status"
     expect(current_path).to eq(admin_items_path)
-    refute page.has_content?("retired")
-
   end
 
 end

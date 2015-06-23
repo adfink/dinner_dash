@@ -35,7 +35,7 @@ describe "admin", type: :feature do
 
   end
 
-  xit "can edit an item" do
+  it "can edit an item" do
     visit admin_items_path
     click_link "edit"
     expect(current_path).to eq(edit_admin_item_path(@item))

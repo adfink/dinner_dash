@@ -6,7 +6,6 @@
 <ul>
   <% @items.each do |item| %>
     <li>  <%= link_to item.title, admin_item_path(item) %>|||| <%= link_to "edit", edit_admin_item_path(item) %>
-<li><%= item.status %></li>
       <%= form_tag admin_item_status_path(item), method: :put do %>
       <%= radio_button_tag(:status, "active", item.status == "active") %>
       <%= label_tag(:status_active, "active") %>
@@ -14,7 +13,6 @@
       <%= label_tag(:status_retired, "retired") %>
         <%= submit_tag "update this item's status" %>
       <% end %>
-    <li>  <%= link_to item.title, admin_item_path(item) %> | <%= link_to "edit", edit_admin_item_path(item) %></li>
   <% end %>
 </ul>
 <p><%= link_to "add an item", new_admin_item_path %></p>
@@ -22,17 +20,6 @@
 <p><%= link_to "back to admin page", admin_user_path(current_user) %></p>
 
 
-<!--
 <%= render partial: "filter" %>
 
-<div class="items">
-<% @items.each do |item| %>
-  <div class="item" data-item="<%= item.title %>">
-    <h3><%= item.title %></h3>
-    <dl>
-      <dt>Menu Item</dt>
-      <dd class="item"><%= link_to item.title, admin_item_path(item) %></dd>
-    </dl>
-  </div>
-<% end %>
-</div> -->
+
