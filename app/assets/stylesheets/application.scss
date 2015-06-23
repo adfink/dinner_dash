@@ -17,7 +17,7 @@
 @import "bootstrap";
 
 body {
-  background-color: #e5e8e0;
+  background-color: #e0e0e0;
 }
 
 .container-fluid {
@@ -34,7 +34,11 @@ img {
     text-transform: uppercase;
     text-align: center;
     font-size: 3em;
-    padding-bottom: 20px
+    padding-bottom: 20px;
+    a {
+      color: white;
+    }
+
   }
   h6 {color: #fff;
     border-bottom: 1px solid #fff;
@@ -59,6 +63,9 @@ h6 {
   h3 {color: black;
     text-transform: uppercase;
     font-style: normal;
+    a {
+      color: black;
+    }
   }
   h6 {color: #999;
     border-bottom: 1px solid #999;
