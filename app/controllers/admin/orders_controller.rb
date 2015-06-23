@@ -1,15 +1,22 @@
 class Admin::OrdersController < Admin::BaseController
+
+  before_action(:set_order, only: [:show, :update])
+
   def index
     @orders = Order.all
   end
 
   def show
-    @order = Order.find(params[:id])
   end
 
   def update
-    order = Order.find_by(id: params[:id])
-    order.update_attributes(status: params[:status])
+    @order.update_attributes(status: params[:status])
     redirect_to :back
+  end
+
+  private
+
+  def set_order
+    @order = Order.find_by(id: params[:id])
   end
 end

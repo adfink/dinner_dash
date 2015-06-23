@@ -39,6 +39,6 @@ before_action(:set_item, only: [:edit, :show, :update])
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    @item = Item.find_by(id: params[:id])
   end
 end

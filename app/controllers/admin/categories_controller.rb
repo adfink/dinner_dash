@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::BaseController
-  
+
 before_action(:set_category, only: [:show, :edit, :update])
 
   def index
@@ -38,6 +38,6 @@ before_action(:set_category, only: [:show, :edit, :update])
   end
 
   def set_category
-    @category = Category.find(params[:id])
+    @category = Category.find_by(id: params[:id])
   end
 end
