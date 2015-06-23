@@ -1,5 +1,5 @@
 <h1 id="menu-title"><%= @category.name %></h1>
-<%= link_to "menus", categories_path %>
+<h3><%= link_to "menus", categories_path %><h3>
 <!-- put the link to menus in the nav bar -->
 <ul>
 <% @category.items.each do |item| %>
