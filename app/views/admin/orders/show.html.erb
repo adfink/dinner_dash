@@ -1,1 +1,15 @@
-<h1>hello world</h1>
+<h1>order information</h1>
+<h4>date ordered:</h4>
+<%= @order.created_at %><br>
+<h4>orderd by:</h4>
+<h6>name:</h6> <%= @order.user.full_name %><br>
+<h6>email:</h6> <%= @order.user.email %><br>
+<h4>food ordered: </h4>
+<% @order.order_items.each do |order_item| %>
+  <%= link_to "#{order_item.item.title}", item_path(order_item.item) %>
+  <%= number_to_currency order_item.item.price %>
+amount:  <%= order_item.quantity %>
+subtotal: <%= number_to_currency order_item.total_price %>
+<% end %><br>
+
+total: <%= number_to_currency @order.total_price %>

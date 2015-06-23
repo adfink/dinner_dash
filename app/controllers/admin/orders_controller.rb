@@ -4,6 +4,10 @@ class Admin::OrdersController < Admin::BaseController
     # @orders = Order.group(:status).order("status desc").count(:status)
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def update
     order = Order.find_by(id: params[:id])
     order.update_attributes(status: params[:status])
