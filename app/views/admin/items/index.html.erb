@@ -8,10 +8,10 @@
     <li>  <%= link_to item.title, admin_item_path(item) %>|||| <%= link_to "edit", edit_admin_item_path(item) %>
 <li><%= item.status %></li>
       <%= form_tag admin_item_status_path(item), method: :put do %>
-      <%= radio_button_tag(:status, "retired",:checked => (item.status == "retired")) %>
-      <%= label_tag(:status_retired, "retire this item") %>
-      <%= radio_button_tag(:status, "active",:checked => (item.status == "active")) %>
-      <%= label_tag(:status_active, "activate this item") %>
+      <%= radio_button_tag(:status, "active", item.status == "active") %>
+      <%= label_tag(:status_active, "active") %>
+      <%= radio_button_tag(:status, "retired", item.status == "retired") %>
+      <%= label_tag(:status_retired, "retired") %>
         <%= submit_tag "update this item's status" %>
       <% end %>
     <li>  <%= link_to item.title, admin_item_path(item) %> | <%= link_to "edit", edit_admin_item_path(item) %></li>
