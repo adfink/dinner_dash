@@ -1,11 +1,19 @@
-
 <h1>update <%= @category.name %> menu name</h1><br>
-
+<form class="form-horizontal">
 <%= form_for([:admin, @category]) do |f| %>
-  <%= f.label :name, "menu" %>
-  <%= f.text_field :name, placeholder: @category.name %><br>
-  <%= f.submit "change"%>
-<% end  %><br>
+  <div class="field form-group">
+    <%= f.label :name, "menu", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :name, placeholder: @category.name, class: 'form-control' %>
+    </div>
+  </div>
 
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "change" %>
+    </div>
+  </div>
+<% end %>
+</form>
 
-<h5><%= link_to "menu", admin_categories_path %></h5>
+<h4><%= link_to "menus", admin_categories_path %></h4>
