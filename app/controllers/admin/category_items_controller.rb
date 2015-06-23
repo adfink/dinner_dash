@@ -32,5 +32,4 @@ class Admin::CategoryItemsController < Admin::BaseController
   def category_item_params
     params.permit(:item_id, :category_id)
   end
-
 end
