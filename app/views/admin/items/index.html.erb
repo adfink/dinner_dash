@@ -1,29 +1,10 @@
 <h1>menu items</h1>
 
-<h1>admin</h1>
-
-<h2>items</h2>
 <ul>
   <% @items.each do |item| %>
     <li>  <%= link_to item.title, admin_item_path(item) %> | <%= link_to "edit", edit_admin_item_path(item) %></li>
   <% end %>
 </ul>
-<p><%= link_to "add an item", new_admin_item_path %></p>
+<h4><%= link_to "add an item", new_admin_item_path %></h4>
 
-<p><%= link_to "back to admin page", admin_user_path(current_user) %></p>
-
-
-<!--
-<%= render partial: "filter" %>
-
-<div class="items">
-<% @items.each do |item| %>
-  <div class="item" data-item="<%= item.title %>">
-    <h3><%= item.title %></h3>
-    <dl>
-      <dt>Menu Item</dt>
-      <dd class="item"><%= link_to item.title, admin_item_path(item) %></dd>
-    </dl>
-  </div>
-<% end %>
-</div> -->
+<h6><%= link_to "back to admin page", admin_user_path(current_user) %></h6>
