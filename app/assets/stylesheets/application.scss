@@ -32,6 +32,9 @@ img {
   background-color: #c3a17d;
   h3 {color: white;
     text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+    padding-bottom: 20px
   }
   h6 {color: #fff;
     border-bottom: 1px solid #fff;
@@ -62,3 +65,9 @@ h6 {
   }
 
   }
+
+
+.featured-three{
+  background-color: #b9b9b9;
+  min-height: 308px;
+}
