@@ -12,7 +12,6 @@ describe "unauthorized user", type: :feature do
 
   it "can browse menus" do
     category = Category.create(name: "fruit")
-
     visit root_path
     click_link("menus")
 
