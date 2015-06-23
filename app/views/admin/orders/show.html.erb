@@ -8,6 +8,7 @@
 <h6>email:</h6> <%= @order.user.email %><br>
 
 <h4>food ordered: </h4>
+
 <% @order.order_items.each do |order_item| %>
   <%= link_to "#{order_item.item.title}", item_path(order_item.item) %>
   <%= number_to_currency order_item.item.price %>
