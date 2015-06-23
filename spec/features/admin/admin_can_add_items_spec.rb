@@ -6,6 +6,7 @@ describe "admin", type: :feature do
     @user = User.create(full_name:"Andrew Fink", email:"andrewfink@gmail.com", password:"password", role: 1)
     ApplicationController.any_instance.stub(:current_user).and_return(@user)
     @item = Item.create(title: "chicken-leg", description: "yum", price: 40000)
+    @item.categories.create(name: 'test menu')
   end
 
   it "can navigate to items index" do
