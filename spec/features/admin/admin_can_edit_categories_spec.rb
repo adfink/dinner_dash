@@ -23,8 +23,8 @@ describe "admin", type: :feature do
     visit admin_categories_path
     click_link "edit"
     expect(current_path).to eq(edit_admin_category_path(@category))
-    page.fill_in "name", with: "other tasty things"
-    click_button "update this menu"
+    page.fill_in "menu", with: "other tasty things"
+    click_button "change"
     expect(current_path).to eq(admin_categories_path)
     assert page.has_content?("other tasty things")
     refute page.has_content?("meat")
