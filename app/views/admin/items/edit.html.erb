@@ -1,5 +1,5 @@
 
-<h1>with this form you can change the <%= @item.title %> item informativemication</h1>
+<h1>update <%= @item.title %> :</h1>
 
 <%= form_for([:admin, @item]) do |f| %>
   <%= f.label :title, "title" %>
@@ -15,8 +15,8 @@
   <%= f.label :image, "edit image" %>
   <%= f.file_field :image, placeholder: @item.image.url %><br>
   <%= image_tag @item.image.url %>
-  <%= f.submit "update this item"%>
+  <%= f.submit "update this item", class: "btn btn-default" %>
 <% end  %>
 
 
-<%= link_to "back to the item list", admin_items_path %>
+<%= link_to "back to menu items", admin_items_path %>

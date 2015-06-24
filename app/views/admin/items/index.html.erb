@@ -2,17 +2,17 @@
 
 <ul>
   <% @items.each do |item| %>
-    <li>  <%= link_to item.title, admin_item_path(item) %>|||| <%= link_to "edit", edit_admin_item_path(item) %>
+    <li>  <%= link_to item.title, admin_item_path(item) %> | <%= link_to "edit", edit_admin_item_path(item) %>
       <%= form_tag admin_item_status_path(item), method: :put do %>
       <%= radio_button_tag(:status, "active", item.status == "active") %>
       <%= label_tag(:status_active, "active") %>
       <%= radio_button_tag(:status, "retired", item.status == "retired") %>
       <%= label_tag(:status_retired, "retired") %>
-        <%= submit_tag "update this item's status" %>
+        <%= submit_tag "update this item's status", class: "btn btn-default" %>
       <% end %>
   <% end %>
 </ul>
 
 <h4><%= link_to "add an item", new_admin_item_path %></h4>
 
-<h6><%= link_to "back to admin page", admin_user_path(current_user) %></h6>
+<h6><%= link_to "back to profile", admin_user_path(current_user) %></h6>

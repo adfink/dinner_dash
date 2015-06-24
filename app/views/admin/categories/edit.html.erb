@@ -1,5 +1,6 @@
 <h1>update <%= @category.name %> menu name</h1><br>
-<form class="form-horizontal">
+
+<div class="form-horizontal">
 <%= form_for([:admin, @category]) do |f| %>
   <div class="field form-group">
     <%= f.label :name, "menu", class: 'col-sm-2 control-label' %>
@@ -10,10 +11,10 @@
 
   <div class="actions form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <%= f.submit "change" %>
+      <%= f.submit "change", class: "btn btn-default" %>
     </div>
   </div>
 <% end %>
-</form>
+</div>
 
 <h4><%= link_to "menus", admin_categories_path %></h4>

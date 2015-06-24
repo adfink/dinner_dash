@@ -89,7 +89,7 @@ h6 {
 }
 
 .right-space {
-  margin-right: 15px;
+  margin-right: 13px;
 }
 
 .small-box{
@@ -101,7 +101,11 @@ h6 {
 }
 
 .height {
-  min-height: 374px;
+  min-height: 335px;
+}
+
+.small-height {
+  height: 335px;
 }
 
 .negative-left {
@@ -113,5 +117,13 @@ h6 {
 }
 
 .custom-width {
-  width: 108.3%;
+  width: 110%;
+}
+
+.box-height {
+  height: 100px
+}
+
+.nav-feature {
+  color: black;
 }
