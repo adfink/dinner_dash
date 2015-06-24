@@ -1,4 +1,4 @@
-<h1>these are all the menus that this item,  <%= @item.title %>, is associated with</h1>
+<h1>menus that contain: <%= @item.title %> </h1>
 
 <ul>
   <% @item.categories.each do |category| %>
@@ -7,5 +7,3 @@
 
   <%= link_to "add this item to a menu", admin_new_category_to_item_path(item_id: @item.id) %>
 </ul>
-
-
