@@ -2,7 +2,7 @@
 
 <ul>
   <% @items.each do |item| %>
-    <li>  <%= link_to item.title, admin_item_path(item) %>|||| <%= link_to "edit", edit_admin_item_path(item) %>
+    <li>  <%= link_to item.title, admin_item_path(item) %> | <%= link_to "edit", edit_admin_item_path(item) %>
       <%= form_tag admin_item_status_path(item), method: :put do %>
       <%= radio_button_tag(:status, "active", item.status == "active") %>
       <%= label_tag(:status_active, "active") %>
