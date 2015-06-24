@@ -28,6 +28,7 @@ order_8  = jorge.orders.create(status: 2)
 order_9  = jeff.orders.create(status: 3)
 order_10 = jorge.orders.create(status: 3)
 
+
 dairy.items.create(title: "fresh milk", description: "straight from the udder.", price: 5.00)
 dairy.items.create(title: "butter", description: "smooth and creamy", price: 4.00)
 dairy.items.create(title: "eggs", description: "trust me, it's dairy", price: 3.50)
@@ -62,6 +63,15 @@ baked.items.create(title: "challah bread", description: "holllla", price: 11.00)
 baked.items.create(title: "brownies", description: "welcome to brown town", price: 9.00)
 baked.items.create(title: "rhubarb pie", description: "better get some ice cream", price: 100.00)
 baked.items.create(title: "muffin", description: "just the top", price: 7.00)
+
+def add_images
+  Item.all.each do |item|
+    item.image = File.open("db/seed_images/#{item.title.split.first}.jpg")
+    item.save!
+  end
+end
+
+add_images
 
 order_1.order_items.create(item_id: 1, quantity: 2)
 order_1.order_items.create(item_id: 2, quantity: 1)
