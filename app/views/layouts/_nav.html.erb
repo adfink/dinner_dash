@@ -3,18 +3,27 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Farm to Table</a>
     </div>
-      <% if current_user %>
-        <%= link_to "logout", logout_path, method: :delete, class: 'btn btn-hover navbar-btn' %>
-        <%= link_to profile_path, class: 'btn btn-hover navbar-btn' do %>
-          <i class="glyphicon glyphicon-user"></i>
-        <% end %>
-      <% else %>
-        <%= link_to "login", login_path, class: 'btn btn-hover navbar-btn' %>
+
+<div>
+  <% if current_user %>
+    <%= link_to "logout", logout_path, method: :delete, class: 'btn btn-hover navbar-btn' %>
+  <% if current_user.admin? %>
+    <%= link_to admin_user_path(current_user), class: 'btn btn-hover navbar-btn' do %>
+      <i class="glyphicon glyphicon-user"></i>
+    <% end %>
+  <% else %>
+    <%= link_to profile_path, class: 'btn btn-hover navbar-btn' do %>
+      <i class="glyphicon glyphicon-user"></i>
       <% end %>
 
-      <%= link_to cart_path, id: 'cart', class: 'btn btn-hover navbar-btn' do %>
-        <i class="glyphicon glyphicon-shopping-cart"></i>
-      <% end %>
+  <% end %>
+  <% else %>
+    <%= link_to "login", login_path, class: 'btn btn-hover navbar-btn' %>
+  <% end %>
+    <%= link_to cart_path, id: 'cart', class: 'btn btn-hover navbar-btn' do %>
+      <i class="glyphicon glyphicon-shopping-cart"></i>
+    <% end %>
+
 
       <%= form_tag search_path, :method => 'get' do %>
         <%= text_field_tag :search, params[:search] %>

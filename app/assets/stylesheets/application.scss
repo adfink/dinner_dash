@@ -17,21 +17,28 @@
 @import "bootstrap";
 
 body {
-  background-color: #e5e8e0;
+  background-color: #e0e0e0;
 }
 
-.container-fluid { max-width: 80%;
-
+.container-fluid {
+  max-width: 80%;
 }
 
-img {width: 100%;
-
+img {
+  width: 100%;
 }
 
 .featured {
   background-color: #c3a17d;
-  h3{color: white;
+  h3 {color: white;
     text-transform: uppercase;
+    text-align: center;
+    font-size: 3em;
+    padding-bottom: 20px;
+    a {
+      color: white;
+    }
+
   }
   h6 {color: #fff;
     border-bottom: 1px solid #fff;
@@ -39,8 +46,8 @@ img {width: 100%;
 
 }
 
-h1, h2, h3 {font-family: 'Oswald', sans-serif;
-
+h1, h2, h3 {
+  font-family: 'Oswald', sans-serif;
 }
 
 h6 {
@@ -56,9 +63,55 @@ h6 {
   h3 {color: black;
     text-transform: uppercase;
     font-style: normal;
+    a {
+      color: black;
+    }
   }
   h6 {color: #999;
     border-bottom: 1px solid #999;
   }
 
   }
+
+
+.featured-three{
+  background-color: #b9b9b9;
+  min-height: 308px;
+}
+
+.featured, .featured-two, .featured-three, .featured-four {
+  margin-bottom: 15px;
+  min-height: 165px;
+}
+
+.featured-four {
+  padding-left: 0px;
+}
+
+.right-space {
+  margin-right: 15px;
+}
+
+.small-box{
+  width: 28%;
+}
+
+.small-box-2 {
+  width: 30.6%;
+}
+
+.height {
+  min-height: 374px;
+}
+
+.negative-left {
+  margin-left: -14px;
+}
+
+.small-box-3 {
+  width: 15.2%;
+}
+
+.custom-width {
+  width: 108.3%;
+}

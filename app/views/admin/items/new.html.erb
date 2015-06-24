@@ -1,4 +1,4 @@
-<%= form_for([:admin, @item]) do |f| %>
+<!-- <%= form_for([:admin, @item]) do |f| %>
   <%= f.label :title, "title" %>
   <%= f.text_field :title %><br>
   <%= f.label :description, "description" %>
@@ -8,4 +8,43 @@
   <%= f.label :image, "upload an image" %>
   <%= f.file_field :image %><br>
   <%= f.submit "add item" %>
-<% end  %>
+<% end  %> -->
+
+
+<form class="form-horizontal">
+<%= form_for([:admin, @item]) do |f| %>
+  <div class="field form-group">
+    <%= f.label :title, "title", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :description, "description", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :description, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :price, "price", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :price, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :image, "upload an image", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.file_field :image, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "add item" %>
+    </div>
+  </div>
+<% end %>
+</form>
