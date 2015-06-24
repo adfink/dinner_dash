@@ -29,6 +29,7 @@ describe "admin", type: :feature do
     page.fill_in "title", with: "cornbread"
     page.fill_in "description", with: "yummy crumbly yellowy bready stuff"
     page.fill_in "price", with: 450
+    check("2")
     click_button "add item"
     expect(current_path).to eq(admin_items_path)
     assert page.has_content?("cornbread")
