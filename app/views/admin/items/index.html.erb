@@ -8,7 +8,7 @@
       <%= label_tag(:status_active, "active") %>
       <%= radio_button_tag(:status, "retired", item.status == "retired") %>
       <%= label_tag(:status_retired, "retired") %>
-        <%= submit_tag "update this item's status" %>
+        <%= submit_tag "update this item's status", class: "btn btn-default" %>
       <% end %>
   <% end %>
 </ul>

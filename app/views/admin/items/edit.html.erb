@@ -15,7 +15,7 @@
   <%= f.label :image, "edit image" %>
   <%= f.file_field :image, placeholder: @item.image.url %><br>
   <%= image_tag @item.image.url %>
-  <%= f.submit "update this item"%>
+  <%= f.submit "update this item", class: "btn btn-default" %>
 <% end  %>
 
 

@@ -15,7 +15,7 @@
 </ul>
 
 <% if @item.status == "active" %>
-  <%= button_to cart_path(item_id: @item.id), class: 'btn btn-hover' do %>
+  <%= button_to cart_path(item_id: @item.id), class: 'btn btn-default' do %>
     <i class="glyphicon glyphicon-plus"></i> add to cart
   <% end %>
 <% end %>
