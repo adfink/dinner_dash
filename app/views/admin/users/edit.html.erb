@@ -1,13 +1,30 @@
-<%= form_for [:admin, @user] do |f| %>
-  <%= f.label :full_name, 'full name' %>
-  <%= f.text_field :full_name, :value => @user.full_name %>
+<div class="form-horizontal">
+  <%= form_for([:admin, @user]) do |f| %>
+    <div class="field form-group">
+      <%= f.label :full_name,"full name", class: 'col-sm-2 control-label' %>
+    <div class="col-sm-3">
+      <%= f.text_field :full_name, :value => @user.full_name, class: 'form-control' %>
+    </div>
+  </div>
 
-  <%= f.label :display_name, 'display name' %>
-  <%= f.text_field :display_name, :value => @user.display_name %>
+  <div class="field form-group">
+    <%= f.label :display_name,"display name", class: 'col-sm-2 control-label' %>
+  <div class="col-sm-3">
+    <%= f.text_field :display_name,:value => @user.display_name, class: 'form-control' %>
+  </div>
+  </div>
 
-  <%= f.label :email, 'email' %>
-  <%= f.text_field :email, :value => @user.email %>
+  <div class="field form-group">
+    <%= f.label :email,"email", class: 'col-sm-2 control-label' %>
+  <div class="col-sm-3">
+    <%= f.text_field :email,:value => @user.email, class: 'form-control' %>
+  </div>
+  </div>
 
-  <%= f.submit 'update profile' %>
-
-<% end %>
+    <div class="actions form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit "update profile", class: "btn btn-default"%>
+      </div>
+    </div>
+    <% end %>
+</div>
