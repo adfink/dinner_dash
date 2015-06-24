@@ -1,17 +1,20 @@
 <h1>your cart</h1>
-
-<ul>
+<div class="form-horizontal">
 <% @cart.items.each do |item, quantity| %>
-  <li><%= item.title %><br>
+  <%= item.title %><br>
       <%= form_tag '/cart', method: :put do %>
-        <%= text_field_tag :quantity, quantity %>
+      <div class="field form-group">
+      <div class="col-sm-3">
+        <%= text_field_tag :quantity, quantity, class: 'form-control' %>
         <%= hidden_field_tag :item_id, item.id %>
-        <%= submit_tag "update" %>
+        <%= submit_tag "update", class: "btn btn-default" %>
       <% end %>
-  </li>
 <% end %>
-</ul>
+</div>
+</div>
+</div>
 
-<%= link_to "checkout", new_order_path %>
 
-<%= link_to "menus", categories_path %>
+<h2><%= link_to "checkout", new_order_path %></h2><br>
+
+<h3><%= link_to "menus", categories_path %><h3>

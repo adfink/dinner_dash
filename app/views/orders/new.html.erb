@@ -7,10 +7,10 @@
     <%=  %>
   </li>
 <% end %>
-</ul> 
+</ul>
 
 <h3>Total <%= number_to_currency @cart.total_price %></h3>
 
-<%= button_to "confirm checkout", orders_path %>
+<%= button_to "confirm checkout", orders_path, class: "btn btn-default" %>
 
-<%= link_to "back to cart", cart_path %>
+<h3><%= link_to "back to cart", cart_path %></h3>
