@@ -21,7 +21,7 @@ body {
   background-image: url("/assets/woody.jpg");
   // background-repeat: no-repeat;
   position: relative;
-  text-align: center;
+  // text-align: center;
 
 }
 
@@ -33,6 +33,24 @@ body {
 .navbar-btn {
   float: right;
 }
+
+.glyphicon {
+    font-size: 30px;
+}
+
+.special-bigger {
+  font-size: 30px;
+  font-family: 'Lobster Two', cursive;
+  padding-top: 16px;
+
+}
+
+.bigger {
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+  padding-top: 1px;
+}
+
 img {
   width: 100%;
 }
