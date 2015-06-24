@@ -6,10 +6,12 @@ before_action(:set_item, only: [:edit, :show, :update])
   end
 
   def new
+    @categories = Category.all
     @item = Item.new
   end
 
   def edit
+    @categories = Category.all
   end
 
   def show
@@ -25,7 +27,6 @@ before_action(:set_item, only: [:edit, :show, :update])
   def update_status
     item = Item.find_by(id: params[:id])
     item.update_attributes(status: params[:status])
-    # byebug
     redirect_to :back
   end
 

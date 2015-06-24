@@ -21,6 +21,20 @@
    </div>
  </div>
 
+
+  <% @categories.all.each do |category| %>
+    <div class="field form-group">
+      <div>
+        <%= f.label :category, category.name, class: 'col-sm-2 control-label'%>
+      </div>
+      <div class="col-sm-3">
+        <%= check_box_tag 'category[ids][]', category.id, @item.part_of?(category), :id => category.id %>
+      </div>
+    </div>
+  <% end %>
+
+
+
  <div class="field form-group">
    <%= f.label :image, "upload an image", class: 'col-sm-2 control-label' %>
    <div class="col-sm-3">
