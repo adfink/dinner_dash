@@ -1,21 +1,23 @@
+<div id="main">
+  <div id="main:after">
 <h1><%= @item.title %></h1>
 
-<%= image_tag(@item.image.url, height: '300', alt: @item.title) %>
+<%= image_tag(@item.image.url, alt: @item.title, class: "item-show-img") %>
 
 <h2>price: <%= number_to_currency @item.price, precision: 2 %></h2>
 
 <h2><%= @item.description %></h2>
 
-<h3>menus:</h3>
-
-<ul>
+<h3>menus</h3>
   <% @item.categories.each do |category| %>
-    <li><%= link_to category.name, category %></li>
+    <h3><%= link_to category.name, category %><h3>
   <% end %>
-</ul>
 
 <% if @item.status == "active" %>
   <%= button_to cart_path(item_id: @item.id), class: 'btn btn-default' do %>
     <i class="glyphicon glyphicon-plus"></i> add to cart
   <% end %>
 <% end %>
+
+</div>
+</div>
