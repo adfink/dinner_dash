@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     put 'items/:id', to: 'items#update_status', :as => 'item_status'
-    resources :users, only: [:show]
+    resources :users, only: [:show, :edit, :update]
     resources :categories, only: [:new, :create, :index, :show, :edit, :update]
     resources :orders, only: [:index, :show, :edit, :update]
     resources :items, only: [:index, :show, :edit, :new, :create, :update]

@@ -1,0 +1,13 @@
+<%= form_for [:admin, @user] do |f| %>
+  <%= f.label :full_name, 'full name' %>
+  <%= f.text_field :full_name, :value => @user.full_name %>
+
+  <%= f.label :display_name, 'display name' %>
+  <%= f.text_field :display_name, :value => @user.display_name %>
+
+  <%= f.label :email, 'email' %>
+  <%= f.text_field :email, :value => @user.email %>
+
+  <%= f.submit 'update profile' %>
+
+<% end %>
