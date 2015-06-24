@@ -1,5 +1,9 @@
 <h1>admin</h1>
 
+<h2><%= current_user.name %></h2>
+
 <p><%= link_to "menus", admin_categories_path %></p><br>
 
 <p><%= link_to "items", admin_items_path %></p>
+
+<p><%= link_to "edit profile", edit_admin_user_path(current_user) %>

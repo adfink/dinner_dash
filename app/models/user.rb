@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   has_many :orders
 
   enum role: %w(default admin)
+
+  def name
+    self.display_name == "" ? self.full_name : self.display_name
+  end
 end
