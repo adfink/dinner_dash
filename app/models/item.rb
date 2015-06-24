@@ -20,9 +20,9 @@ class Item < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('title LIKE ?', "%#{search}%") + where('description LIKE ?', "%#{search}%")
+      active.where('title LIKE ?', "%#{search}%") + where('description LIKE ?', "%#{search}%")
     else
-      self.all
+      self.active
     end
   end
 
