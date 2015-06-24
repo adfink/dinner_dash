@@ -1,9 +1,17 @@
-<h1>menus that contain: <%= @item.title %> </h1>
+<div id="main">
+  <div id="main:after">
+    <h1><%= @item.title %></h1>
+    <h2> status: <%= @item.status  %></h2>
+    <h2><%= link_to "add this item to a menu", admin_new_category_to_item_path(item_id: @item.id) %></h2>
+    <%= image_tag(@item.image.url, alt: @item.title, class: "item-show-img") %>
 
-<ul>
-  <% @item.categories.each do |category| %>
-    <li><%= category.name%></li>
-  <% end %>
+    <h2>price: <%= number_to_currency @item.price, precision: 2 %></h2>
 
-  <%= link_to "add this item to a menu", admin_new_category_to_item_path(item_id: @item.id) %>
-</ul>
+    <h2><%= @item.description %></h2>
+
+    <h3>menus</h3>
+    <% @item.categories.each do |category| %>
+      <h3><%= link_to category.name, admin_category_path(category) %><h3>
+    <% end %>
+  </div>
+</div>
