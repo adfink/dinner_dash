@@ -1,5 +1,4 @@
 class Admin::CategoryItemsController < Admin::BaseController
-
   def new
     @category = Category.find(params[:category_id])
     @items = Item.all
