@@ -1,25 +1,16 @@
 <h1>Orders</h1>
 
-<h4>ordered:
-<%= @orders.ordered.count %></h4>
-<% @orders.ordered.each do |order| %>
-  <%= render partial: 'form', locals: { :order => order } %>
-<% end %><br>
+<%= render partial: 'filter' %>
 
-<h4>paid:
-<%= @orders.paid.count %></h4>
-<% @orders.paid.each do |order| %>
-  <%= render partial: 'form', locals: { :order => order } %>
-<% end %><br>
+<div class="orders">
+  <% @orders.each do |order| %>
+    <div class="order" data-status="<%= order.status %>">
+      <%= form_tag admin_order_path(order), method: :put do %>
+      <%= select_tag :status, options_for_select(Order.statuses.keys, order.status) %>
+      <%= submit_tag "update", class: "btn btn-xs" %>
+      <% end %>
 
-<h4>cancelled:
-<%= @orders.cancelled.count %></h4>
-<% @orders.cancelled.each do |order| %>
-  <%= render partial: 'form', locals: { :order => order } %>
-<% end %><br>
-
-<h4>completed:
-<%= @orders.completed.count %></h4>
-<% @orders.completed.each do |order| %>
-  <%= render partial: 'form', locals: { :order => order } %>
-<% end %><br>
+      <h6><%= link_to "view this order", admin_order_path(order) %></h6 > 
+    </div>
+  <% end %>
+</div>
