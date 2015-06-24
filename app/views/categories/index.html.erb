@@ -1,5 +1,9 @@
 <h1>menus</h1>
-<ul><% @categories.each do |category| %>
-<li><%= link_to category.name, category %></li>
-<% end %>
+
+<ul>
+  <% @categories.each do |category| %>
+    <li><%= link_to category.name, category %></li>
+  <% end %>
 </ul>
+
+<h3><%= link_to 'all items', items_path %></h3>

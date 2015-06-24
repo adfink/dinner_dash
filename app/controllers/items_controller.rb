@@ -4,6 +4,6 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.search(params[:search])
+    @items = Item.active
   end
 end
