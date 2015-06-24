@@ -1,5 +1,4 @@
 class CartItemsController < ApplicationController
-
   before_action(:set_cart_items, only: [:create])
 
   def create

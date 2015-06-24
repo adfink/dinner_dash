@@ -1,5 +1,4 @@
 class Admin::ItemsController < Admin::BaseController
-
 before_action(:set_item, only: [:edit, :show, :update])
 
   def index
