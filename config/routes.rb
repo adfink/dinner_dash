@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get '/search', to: 'search#items'
 
   namespace :admin do
-    resources :users, only: [:show]
+    put 'items/:id', to: 'items#update_status', :as => 'item_status'
+    resources :users, only: [:show, :edit, :update]
     resources :categories, only: [:new, :create, :index, :show, :edit, :update]
     resources :orders, only: [:index, :show, :edit, :update]
     resources :items, only: [:index, :show, :edit, :new, :create, :update]

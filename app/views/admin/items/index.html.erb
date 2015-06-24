@@ -1,15 +1,18 @@
-<h1>items...all of them</h1>
+<h1>menu items</h1>
 
-
-<h1>admin</h1>
-
-
-<h2>items</h2>
 <ul>
   <% @items.each do |item| %>
-    <li>  <%= link_to item.title, admin_item_path(item) %>      |||| <%= link_to "edit", edit_admin_item_path(item) %></li>
+    <li>  <%= link_to item.title, admin_item_path(item) %>|||| <%= link_to "edit", edit_admin_item_path(item) %>
+      <%= form_tag admin_item_status_path(item), method: :put do %>
+      <%= radio_button_tag(:status, "active", item.status == "active") %>
+      <%= label_tag(:status_active, "active") %>
+      <%= radio_button_tag(:status, "retired", item.status == "retired") %>
+      <%= label_tag(:status_retired, "retired") %>
+        <%= submit_tag "update this item's status" %>
+      <% end %>
   <% end %>
 </ul>
-<p><%= link_to "add an item", new_admin_item_path %></p>
 
-<p><%= link_to "back to admin page", admin_user_path(current_user) %></p>
+<h4><%= link_to "add an item", new_admin_item_path %></h4>
+
+<h6><%= link_to "back to admin page", admin_user_path(current_user) %></h6>

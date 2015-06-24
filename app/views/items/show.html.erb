@@ -13,3 +13,9 @@
     <li><%= link_to category.name, category %></li>
   <% end %>
 </ul>
+
+<% if @item.status == "active" %>
+  <%= button_to cart_path(item_id: @item.id), class: 'btn btn-hover' do %>
+    <i class="glyphicon glyphicon-plus"></i> add to cart
+  <% end %>
+<% end %>

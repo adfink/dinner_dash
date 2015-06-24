@@ -18,8 +18,16 @@ before_action(:set_item, only: [:edit, :show, :update])
 
   def update
     @item.update(item_params)
+    @item.set_categories(params[:category][:ids])
     flash[:notice] = "Neato!!!...#{@item.title} was just updated in our postgres database"
     redirect_to admin_items_path
+  end
+
+  def update_status
+    item = Item.find_by(id: params[:id])
+    item.update_attributes(status: params[:status])
+    # byebug
+    redirect_to :back
   end
 
   def create
