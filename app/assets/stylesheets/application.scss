@@ -20,15 +20,19 @@ body {
   background-color: #e0e0e0;
   background-image: url("/assets/woody.jpg");
   // background-repeat: no-repeat;
+  position: relative;
+  text-align: center;
 
 }
 
 .container-fluid {
   max-width: 80%;
   background-color: transparentize(white, .3);
-
 }
 
+.navbar-btn {
+  float: right;
+}
 img {
   width: 100%;
 }
