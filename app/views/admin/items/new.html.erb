@@ -1,5 +1,5 @@
 <div class="form-horizontal">
- <%= form_for([:admin, @item], authenticity_token: false,  enforce_utf8: false) do |f| %>
+ <%= form_for([:admin, @item]) do |f| %>
  <div class="field form-group">
    <%= f.label :title, "title", class: 'col-sm-2 control-label' %>
    <div class="col-sm-3">

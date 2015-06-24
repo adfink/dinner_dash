@@ -1,5 +1,5 @@
 <%= form_tag admin_order_path(order), method: :put do %>
   <%= select_tag :status, options_for_select(Order.statuses.keys, order.status) %>
-  <%= submit_tag "update" %>
+  <%= submit_tag "update", class: "btn btn-xs" %>
 <% end %>
-<%= link_to "view this order", admin_order_path(order) %><br>
+<h6><%= link_to "view this order", admin_order_path(order) %></h6 >
