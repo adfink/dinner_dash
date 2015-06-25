@@ -35,6 +35,12 @@ body {
   background-color: transparentize(white, .3);
 }
 
+
+.center-in-column {
+  text-align: center;
+
+}
+
 .navbar-btn {
   float: right;
 }
@@ -68,7 +74,7 @@ img {
     font-size: 3em;
     padding-bottom: 20px;
     a {
-      color: white;
+      color: #1b440c;
     }
 
   }
