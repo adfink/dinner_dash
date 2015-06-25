@@ -4,7 +4,7 @@ class CartItemsController < ApplicationController
   def create
     @cart.add_item(@item.id)
     set_cart
-    flash[:notice] = "#{@item.title} added to your cart"
+    flash[:success] = "#{@item.title} added to your cart"
     redirect_to :back
   end
 
@@ -15,7 +15,7 @@ class CartItemsController < ApplicationController
       @cart.contents.delete(params[:item_id])
     end
     set_cart
-    flash[:notice] = "your cart has been updated"
+    flash[:success] = "your cart has been updated"
     redirect_to cart_path
   end
 

@@ -2,7 +2,7 @@
 
 <div class="form-horizontal">
 <% @cart.items.each do |item, quantity| %>
-  <%= item.title %><br>
+  <h3><%= item.title %></h3><br>
 
   <%= form_tag '/cart', method: :put do %>
     <div class="field form-group">
