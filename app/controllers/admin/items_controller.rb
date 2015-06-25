@@ -20,7 +20,7 @@ before_action(:set_item, only: [:edit, :show, :update])
   def update
     @item.update(item_params)
     @item.set_categories(params[:category][:ids])
-    flash[:notice] = "Neato!!!...#{@item.title} was just updated in our postgres database"
+    flash[:success] = "Neato!!!...#{@item.title} was just updated in our postgres database"
     redirect_to admin_items_path
   end
 
@@ -36,7 +36,7 @@ before_action(:set_item, only: [:edit, :show, :update])
       item.set_categories(params[:category][:ids])
       redirect_to admin_items_path
     else
-      flash[:errors] = "invalid item parameters"
+      flash[:danger] = "invalid item parameters"
       redirect_to new_admin_item_path
     end
   end

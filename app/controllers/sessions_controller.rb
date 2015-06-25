@@ -12,14 +12,14 @@ class SessionsController < ApplicationController
         redirect_to profile_path
       end
     else
-      flash.now[:errors] = "Invalid login"
+      flash.now[:danger] = "Invalid login"
       render :new
     end
   end
 
   def destroy
     session.clear
-    flash[:notice] = "See you again soon!"
+    flash[:danger] = "See you again soon!"
     redirect_to root_path
   end
 end
