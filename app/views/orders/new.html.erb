@@ -1,16 +1,22 @@
 <h1>your cart</h1>
 
-<ul>
+<div class="col-sm-12">
 <% @cart.items.each do |item, quantity| %>
-  <li>
-    <%= item.title %> | quantity <%= quantity %> | total <%= number_to_currency (quantity * item.price) %><br>
-    <%=  %>
-  </li>
-<% end %>
-</ul>
+  <div class="col-sm-4">
+    <h2><%= item.title %></h2>
 
+    <h4>quantity <%= quantity %></h4>
+    <h4>total <%= number_to_currency (quantity * item.price) %></h4>
+  </div>
+<% end %>
+</div>
+
+<br>
+
+<div class="col-sm-12">
 <h3>Total <%= number_to_currency @cart.total_price %></h3>
 
 <%= button_to "confirm checkout", orders_path, class: "btn btn-default" %>
 
 <h3><%= link_to "back to cart", cart_path %></h3>
+</div>
