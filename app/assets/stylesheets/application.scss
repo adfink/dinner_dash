@@ -18,10 +18,42 @@
 
 body {
   background-color: #e0e0e0;
+  background-image: url("/assets/woody.jpg");
+  // background-repeat: no-repeat;
+  position: relative;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  h1 {
+    text-align: center;
+  }
+
+
 }
 
 .container-fluid {
   max-width: 80%;
+  background-color: transparentize(white, .3);
+}
+
+.navbar-btn {
+  float: right;
+}
+
+.glyphicon {
+    font-size: 30px;
+}
+
+.special-bigger {
+  font-size: 30px;
+  font-family: 'Lobster Two', cursive;
+  padding-top: 16px;
+
+}
+
+.bigger {
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+  padding-top: 1px;
 }
 
 img {
@@ -143,36 +175,32 @@ h6 {
 
 }
 
-.item-background-img {
-
-}
-
-#main {
+.main {
   position: relative;
   text-align: center;
+  margin-bottom: 35px
   h1 {
-    color: white;
+    color: #666666;
   }
 
 }
 
-#main:after {
+.main:after {
    content : "";
    display: block;
    position: absolute;
    top: 0;
    left: 0;
-   background-image: url("/assets/plate.jpg");
    width: 100%;
    height: 100%;
-   opacity : 0.4;
    z-index: -1;
+   margin-bottom: 35px
+
 }
 
 a {
   color: #497714;
 }
-
 
 .check-box-label {
   text-align: right;

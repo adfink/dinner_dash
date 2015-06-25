@@ -1,5 +1,5 @@
-<div id="main">
-  <div id="main:after">
+<div class="main">
+  <div class="main:after"><br>
     <h1><%= @item.title %></h1>
     <h2> status: <%= @item.status  %></h2>
     <h2><%= link_to "add this item to a menu", admin_new_category_to_item_path(item_id: @item.id) %></h2>
@@ -12,6 +12,6 @@
     <h3>menus</h3>
     <% @item.categories.each do |category| %>
       <h3><%= link_to category.name, admin_category_path(category) %><h3>
-    <% end %>
+    <% end %><br>
   </div>
 </div>
