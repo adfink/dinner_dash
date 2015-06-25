@@ -16,7 +16,7 @@ describe "admin index page", type: :feature do
   end
 
   it "can see order date and time" do
-    expect(page).to have_content(@order.created_at)
+    expect(page).to have_content(@order.created_at.to_date)
   end
 
   it "can see purchasers full name" do
