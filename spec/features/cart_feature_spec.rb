@@ -57,4 +57,16 @@ describe "cart", type: :feature do
     expect(page).to have_content("your cart has been updated")
     expect(page).to have_selector("input[value='3']")
   end
+
+  it "lets removes an item with an updated quantity of zero" do
+    visit category_path(@category)
+    click_button "add to cart"
+    visit cart_path
+    fill_in("quantity", with: "0")
+    click_button "update"
+
+    expect(page).to have_content("your cart has been updated")
+    expect(page).not_to have_content("sour cream")
+    expect(page).not_to have_selector("input[value='0']")
+  end
 end
