@@ -2,7 +2,7 @@
   <div id="main:after">
 <h1><%= @item.title %></h1>
 
-<%= image_tag(@item.image.url, alt: @item.title, class: "item-show-img") %>
+<%= image_tag(@item.image.url, alt: @item.title, class: "item-show-img", style: "height: 450px;") %>
 
 <h2>price: <%= number_to_currency @item.price, precision: 2 %></h2>
 
