@@ -1,12 +1,22 @@
-<h1>admin</h1>
+<h1>admin | <%= current_user.name %></h1>
 
-<h2><%= current_user.name %></h2>
+<div class="col-sm-3", style="text-align: center;">
+  <h3><%= link_to "menus", admin_categories_path %></h3>
+  <h6>add or edit a menu</h6>
+</div>
 
-<h3><%= link_to "menus", admin_categories_path %><br></h3>
-<h6>add or edit a menu</h6>
+<div class="col-sm-3", style="text-align: center;">
+  <h3><%= link_to "items", admin_items_path %></h3>
+  <h6>add or edit an item</h6>
+</div>
 
-<h3><%= link_to "items", admin_items_path %></h3>
+<div class="col-sm-3", style="text-align: center;">
+  <h3><%= link_to "orders", admin_orders_path %></h3>
+  <h6>view or edit orders</h6>
+</div>
 
-<h3><%= link_to "edit profile", edit_admin_user_path(current_user) %></h3>
+<div class="col-sm-3", style="text-align: center;">
+  <h3><%= link_to "edit profile", edit_admin_user_path(current_user) %></h3>
+  <h6>edit your profile</h6>
+</div>
 
-<h3><%= link_to "orders", admin_orders_path %></h3>

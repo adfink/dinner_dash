@@ -1,17 +1,19 @@
 <h1>your cart</h1>
+
 <div class="form-horizontal">
 <% @cart.items.each do |item, quantity| %>
   <%= item.title %><br>
-      <%= form_tag '/cart', method: :put do %>
-      <div class="field form-group">
+
+  <%= form_tag '/cart', method: :put do %>
+    <div class="field form-group">
       <div class="col-sm-3">
         <%= text_field_tag :quantity, quantity, class: 'form-control' %>
         <%= hidden_field_tag :item_id, item.id %>
         <%= submit_tag "update", class: "btn btn-default" %>
-      <% end %>
+      </div>
+    </div>
+  <% end %>
 <% end %>
-</div>
-</div>
 </div>
 
 
