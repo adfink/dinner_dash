@@ -10,10 +10,10 @@ class Admin::UsersController < Admin::BaseController
   def update
     @user = User.find_by(id: params[:id])
     if @user.update(user_params)
-      flash[:notice] = "you have updated your profile"
+      flash[:success] = "you have updated your profile"
       redirect_to admin_user_path(@user)
     else
-      flash.now[:errors] = @user.errors.full_messages.join(", ")
+      flash.now[:danger] = @user.errors.full_messages.join(", ")
       render :edit
     end
   end
