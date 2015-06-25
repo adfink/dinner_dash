@@ -53,3 +53,8 @@ end
 group :development do
   gem 'better_errors'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
+
