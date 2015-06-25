@@ -1,7 +1,7 @@
 <h1><%= @user.name %></h1>
-
-<ol><% @user.orders.each do |order| %>
-  <li>your order: <%= order.items.count %> item(s)</li>
-    <%= link_to "view this order", order_path(order) %>
-<% end %></ol>
-<h6><%= link_to "Farm to Table", root_path %></h6>
+<div class="col-sm-12" style="text-align: center;">
+<% @user.orders.each do |order| %>
+  <h2>order:</h2> <h4><%= order.items.count %> item(s)</h4>
+    <h4><%= link_to "view this order", order_path(order) %><br></h4>
+<% end %><br>
+</div><br>
