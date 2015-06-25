@@ -5,6 +5,8 @@ describe "cart", type: :feature do
   before :each do
     @category = Category.create(name: "dairy")
     @category.items.create(title: "sour cream", description: "this cream is sour", price: 4.75)
+    visit category_path(@category)
+    click_button "add to cart"
   end
 
   it "can show it's contents" do
@@ -43,5 +45,16 @@ describe "cart", type: :feature do
 
     expect(current_path).to eq(login_path)
     expect(page).to have_content("please log in before you check out")
+  end
+
+  it "lets the user change the quantity of an item in their cart" do
+    visit category_path(@category)
+    click_button "add to cart"
+    visit cart_path
+    fill_in("quantity", with: "3")
+    click_button "update"
+
+    expect(page).to have_content("your cart has been updated")
+    expect(page).to have_selector("input[value='3']")
   end
 end
