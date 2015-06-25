@@ -20,7 +20,7 @@ before_action(:set_category, only: [:show, :edit, :update])
     if category.save
       redirect_to admin_categories_path
     else
-      flash[:errors] = "oops that didn't persist to the database...as they say in the industry"
+      flash[:danger] = "oops that didn't persist to the database...as they say in the industry"
       redirect_to new_admin_category_path
     end
   end

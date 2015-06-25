@@ -19,7 +19,7 @@
 <%= render partial: 'layouts/nav' %>
 
 <% flash.each do |name, message| %>
-  <div class="alert alert-<%= name %>"><%= message %></div>
+  <div class="alert alert-<%= name %>" style="text-align: center;"><h5><%= message %></h5></div>
 <% end %>
 
 

@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
 
   def new
     if current_user.nil?
-      flash[:errors] = "please log in before you check out"
+      flash[:danger] = "please log in before you check out"
       redirect_to login_path
     end
   end

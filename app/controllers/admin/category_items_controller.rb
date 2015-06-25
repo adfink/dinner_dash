@@ -15,7 +15,7 @@ class Admin::CategoryItemsController < Admin::BaseController
     if category_item.save
       redirect_to admin_user_path(current_user)
     else
-      flash.now[:errors] = "oops that didn't persist to the database...as they say in the industry"
+      flash.now[:danger] = "oops that didn't persist to the database...as they say in the industry"
       redirect_to admin_user_path(current_user)
     end
   end
