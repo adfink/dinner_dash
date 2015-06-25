@@ -1,10 +1,15 @@
 <h1>menus</h1>
 
-<ul>
-  <% @categories.each do |category| %>
-    <li><%= link_to category.name, admin_category_path(category) %> | <%= link_to "edit", edit_admin_category_path(category) %></li>
-  <% end %>
-</ul>
-<p><h4><%= link_to "add a menu", new_admin_category_path %></h4></p>
 
-<p><h6><%= link_to "admin page", admin_user_path(current_user) %></p></h6>
+<% @categories.each do |category| %>
+  <div class="col-sm-4" style="text-align: center;">
+    <h3><%= link_to category.name, admin_category_path(category) %></h3>
+    <h4><%= link_to "edit", edit_admin_category_path(category) %></h4>
+  </div>
+<% end %>
+
+<div class="col-sm-12">
+<h4><%= link_to "add a menu", new_admin_category_path %></h4>
+
+<h6><%= link_to "admin page", admin_user_path(current_user) %></h6>
+</div>

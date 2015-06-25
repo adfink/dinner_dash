@@ -5,7 +5,7 @@
 <div class="orders">
   <% @orders.each do |order| %>
     <div class="order col-sm-4" data-status="<%= order.status %>">
-      <h5><%= number_to_currency order.total_price %></h5>
+      <h4>order: <%= order.id %> | total: <%= number_to_currency order.total_price %></h4>
 
       <%= form_tag admin_order_path(order), method: :put do %>
       <%= select_tag :status, options_for_select(Order.statuses.keys, order.status) %>
