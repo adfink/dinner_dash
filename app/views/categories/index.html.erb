@@ -2,7 +2,7 @@
 
 <% @categories.each do |category| %>
   <div class="col-lg-4 col-sm-4 center-in-column">
-    <h3><%= link_to image_tag("fruit.jpg"), category %></h3>
+    <h3><%= link_to image_tag("#{category.name}.jpg"), category %></h3>
   </div>
 <% end %>
 
