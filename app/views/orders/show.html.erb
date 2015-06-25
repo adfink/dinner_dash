@@ -1,25 +1,27 @@
-<h1>a little bit of information about your order...</h1>
-<strong>order status:</strong> <%= @order.display_status %><br>
-<strong>date order was submitted:</strong> <%= @order.created_at %>
-<table class="table-responsive">
-  <th>
+<h1>order information</h1>
 
-  </th>
-  <% @order.order_items.each do |order_item| %>
-  <tr class="active">
-    <td>
-      <%= link_to "#{order_item.item.title}", item_path(order_item.item) %> |
-    </td>
-      <td>amount sold: <%= order_item.quantity %> </td>
-      <td>total price: <%= number_to_currency order_item.total_price %></td>
-      <% end %>
-  </tr>
-  <tr class="active">
-    <td>
-      total: <%= number_to_currency @order.total_price %>
-    </td>
-  </tr>
+<div class="col-sm-4">
+<h2>order status:</h2>
+<h4><%=@order.display_status %></h4>
+</div>
 
-</table><br>
+<div class="col-sm-4">
+<h2>date ordered:</h2>
+<h4><%= @order.created_at.to_date %></h4>
+<h4><%= @order.created_at.strftime("%I:%M %p") %></h4>
+</div>
 
-<h6><%= link_to "back to profile", profile_path %></h6>
+<div class="col-sm-4">
+<h2>food ordered: </h2>
+
+<% @order.order_items.each do |order_item| %>
+  <h4><%= link_to "#{order_item.item.title}", item_path(order_item.item) %></h4>
+  <ul>
+    <li>price: <%= number_to_currency order_item.item.price %></li>
+    <li>amount:  <%= order_item.quantity %></li>
+    <li>subtotal: <%= number_to_currency order_item.total_price %></li>
+  </ul>
+<% end %>
+
+<h4 style="text-align: right;">| total: <%= number_to_currency @order.total_price %> |</h4>
+</div>

@@ -21,16 +21,6 @@ describe "user has access to their orders", type: :feature do
     click_link("view this order")
 
     expect(current_path).to eq(order_path(@order))
-    expect(page).to have_content("a little bit of information about your order...")
+    expect(page).to have_content("order information")
   end
 end
-
-# items with quantity ordered and line-item subtotals
-# links to each item description page
-
-# order total price
-# date/time order was submitted
-# if completed or cancelled, display a timestamp when that action took place
-# if any item is retired from the menu:
-#   they can still access the item page
-#   they cannot add it to a new cart
