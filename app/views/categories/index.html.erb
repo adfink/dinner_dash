@@ -2,11 +2,7 @@
 
 <% @categories.each do |category| %>
   <div class="col-lg-4 col-sm-4 center-in-column">
-    <% if image_tag("#{category.name}.jpg")  %>
-        <h3 id="menulink"><%= link_to image_tag("#{category.name.split.first}.jpg"), category %></h3>
-      <% else  %>
-        <h3 id="menulink"><%= link_to "hello", category %></h3>
-      <% end %>
+    <h3 id="menulink"><%= link_to image_tag("#{category.name.split.first}.jpg"), category %></h3>
   </div>
 
 <% end %>
