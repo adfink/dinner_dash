@@ -19,7 +19,7 @@
 <%= render partial: 'layouts/nav' %>
 
 <% flash.each do |name, message| %>
-  <%= content_tag :div, message, :id => "flash_#{name}" %>
+  <div class="alert alert-<%= name %>"><%= message %></div>
 <% end %>
 
 
