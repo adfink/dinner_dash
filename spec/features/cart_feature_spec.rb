@@ -34,4 +34,14 @@ describe "cart", type: :feature do
     click_button('confirm checkout')
     expect(current_path).to eq(profile_path)
   end
+
+  it "makes a user log in before they can check out" do
+    visit category_path(@category)
+    click_button "add to cart"
+    visit cart_path
+    click_link('checkout')
+
+    expect(current_path).to eq(login_path)
+    expect(page).to have_content("please log in before you check out")
+  end
 end
